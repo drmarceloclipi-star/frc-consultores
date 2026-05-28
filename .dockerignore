@@ -1,20 +1,14 @@
-# Dependencies (reinstalled inside Docker)
-node_modules
-pnpm-debug.log*
-npm-debug.log*
-yarn-debug.log*
+# Rust build output (rebuilt inside Docker)
+target
 
-# Build output
-.next
-out
-build
-dist
+# Node tooling (only used to regenerate static/styles.css; not needed for the build)
+node_modules
 
 # Git
 .git
 .gitignore
 
-# Environment files (pass via docker-compose env_file or runtime env vars)
+# Environment files (pass via runtime env vars)
 .env
 .env.local
 .env.*.local
@@ -44,17 +38,14 @@ AGENTS.md
 CLAUDE.md
 GEMINI.md
 
-# Docs / research (large, not needed at runtime)
+# Docs / research (not needed at runtime)
 docs
-scripts
 
-# Docker files themselves (no need to copy into image)
+# Docker files themselves
 Dockerfile
-docker-compose.yml
 .dockerignore
 
 # Misc
-*.tsbuildinfo
 README.md
 CHANGELOG.md
 LICENSE

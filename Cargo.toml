@@ -1,0 +1,24 @@
+[package]
+name = "frc-consultores"
+version = "1.0.0"
+edition = "2021"
+description = "FRC Consultores marketing site — server-rendered in Rust with Axum + Maud"
+license = "MIT"
+
+[[bin]]
+name = "frc-consultores"
+path = "src/main.rs"
+
+[dependencies]
+axum = { version = "0.8", features = ["macros"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "signal"] }
+maud = { version = "0.27", features = ["axum"] }
+serde = { version = "1", features = ["derive"] }
+tower-http = { version = "0.6", features = ["trace"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
