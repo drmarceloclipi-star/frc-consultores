@@ -1,65 +1,57 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+# FRC Consultores — Rust rewrite
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+## What this is
 
-# Website Reverse-Engineer Template
+The bilingual (EN/PT) **TAVON.ai** marketing site, server-rendered entirely in
+Rust. This was rewritten from an original Next.js/React codebase. There is **no
+JavaScript at runtime** — interactivity (mobile menu, modals, case-study tabs) is
+pure CSS, and forms post to Rust handlers.
 
-## What This Is
-A reusable template for reverse-engineering any website into a clean, modern Next.js codebase using AI coding agents. The Next.js + shadcn/ui + Tailwind v4 base is pre-scaffolded — just run `/clone-website <url1> [<url2> ...]`.
+## Tech stack
 
-## Tech Stack
-- **Framework:** Next.js 16 (App Router, React 19, TypeScript strict)
-- **UI:** shadcn/ui (Radix primitives, Tailwind CSS v4, `cn()` utility)
-- **Icons:** Lucide React (default — will be replaced/supplemented by extracted SVGs)
-- **Styling:** Tailwind CSS v4 with oklch design tokens
-- **Deployment:** Vercel
+- **Axum** (Tokio) — async web server and routing
+- **Maud** — compile-time HTML templating (components are Rust functions
+  returning `Markup`)
+- **Tailwind CSS v4** — styling, compiled once into `static/styles.css` and
+  embedded into the binary with `include_str!` (no runtime Node dependency)
 
 ## Commands
-- `npm run dev` — Start dev server
-- `npm run build` — Production build
-- `npm run lint` — ESLint check
-- `npm run typecheck` — TypeScript check
-- `npm run check` — Run lint + typecheck + build
 
-## Code Style
-- TypeScript strict mode, no `any`
-- Named exports, PascalCase components, camelCase utils
-- Tailwind utility classes, no inline styles
-- 2-space indentation
-- Responsive: mobile-first
+- `cargo run` — start the dev server (http://0.0.0.0:3000, override with `PORT`)
+- `cargo build --release` — optimized binary
+- `cargo check` / `cargo clippy` — type-check / lint
+- `bash scripts/build-css.sh` — regenerate `static/styles.css` (only needed when
+  markup or `assets/input.css` changes)
 
-## Design Principles
-- **Pixel-perfect emulation** — match the target's spacing, colors, typography exactly
-- **No personal aesthetic changes during emulation phase** — match 1:1 first, customize later
-- **Real content** — use actual text and assets from the target site, not placeholders
-- **Beauty-first** — every pixel matters
+## Project structure
 
-## Project Structure
 ```
 src/
-  app/              # Next.js routes
-  components/       # React components
-    ui/             # shadcn/ui primitives
-    icons.tsx       # Extracted SVG icons as React components
-  lib/
-    utils.ts        # cn() utility (shadcn)
-  types/            # TypeScript interfaces
-  hooks/            # Custom React hooks
-public/
-  images/           # Downloaded images from target site
-  videos/           # Downloaded videos from target site
-  seo/              # Favicons, OG images, webmanifest
-docs/
-  research/         # Inspection output (design tokens, components, layout)
-  design-references/ # Screenshots and visual references
-scripts/            # Asset download scripts
+  main.rs     # server, routing, handlers, embedded static assets
+  i18n.rs     # Locale enum + EN/PT content model (single source of copy)
+  layout.rs   # document shell, header, footer
+  sections.rs # home-page sections
+  modals.rs   # CSS-only modals
+  pages.rs    # full page documents per route
+  icons.rs    # inline SVG icons (Lucide paths)
+assets/input.css   # Tailwind entrypoint + CSS-only interaction rules
+static/styles.css  # generated, committed, embedded at compile time
 ```
 
-## MOST IMPORTANT NOTES
-- When launching Claude Code agent teams, ALWAYS have each teammate work in their own worktree branch and merge everyone's work at the end, resolving any merge conflicts smartly since you are basically serving the orchestrator role and have full context to our goals, work given, work achieved, and desired outcomes.
-- After editing `AGENTS.md`, run `bash scripts/sync-agent-rules.sh` to regenerate platform-specific instruction files.
-- After editing `.claude/skills/clone-website/SKILL.md`, run `node scripts/sync-skills.mjs` to regenerate the skill for all platforms.
+## Conventions
 
-@docs/research/INSPECTION_GUIDE.md
+- Keep all user-facing copy in `i18n.rs` (or the per-page content structs in
+  `pages.rs`); branch on `Locale` rather than duplicating templates where
+  practical.
+- Preserve the existing Tailwind utility classes in markup — the design is a
+  pixel-for-pixel match of the original site. After changing classes, re-run
+  `scripts/build-css.sh` so `static/styles.css` stays in sync.
+- CSS-only widgets rely on hidden `<input>` toggles + `<label for=...>` triggers
+  and sibling selectors defined in `assets/input.css`. Modal toggle/overlay pairs
+  must remain adjacent siblings.
+- No `unsafe`. Validate only at boundaries (form input, route params).
+
+## Important notes
+
+- After editing `AGENTS.md`, run `bash scripts/sync-agent-rules.sh` to regenerate
+  platform-specific instruction files.

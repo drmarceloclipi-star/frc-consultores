@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@source "../src";
+
+@theme {
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+}
+
+/* ------------------------------------------------------------------ */
+/* CSS-only interactions (no JavaScript): mobile menu, modals, tabs.  */
+/* Unlayered rules deliberately override Tailwind utility `display`.  */
+/* ------------------------------------------------------------------ */
+
+.menu-toggle,
+.modal-toggle,
+.tab-input {
+  display: none;
+}
+
+/* Mobile navigation menu */
+.mobile-menu {
+  display: none;
+}
+@media (max-width: 767px) {
+  .menu-toggle:checked ~ nav.mobile-menu {
+    display: block;
+  }
+}
+.menu-icon-close {
+  display: none;
+}
+.menu-toggle:checked ~ div .menu-icon-open {
+  display: none;
+}
+.menu-toggle:checked ~ div .menu-icon-close {
+  display: inline-flex;
+}
+
+/* Modals */
+.modal {
+  display: none;
+}
+#contact-toggle:checked ~ #contact-modal,
+#header-contact-toggle:checked ~ #header-contact-modal,
+#subscribe-toggle:checked ~ #subscribe-modal {
+  display: flex;
+}
+body:has(.modal-toggle:checked) {
+  overflow: hidden;
+}
+
+/* Case-study tabs */
+.tab-panel {
+  display: none;
+}
+#case-0:checked ~ .tab-content .tab-panel-0,
+#case-1:checked ~ .tab-content .tab-panel-1,
+#case-2:checked ~ .tab-content .tab-panel-2,
+#case-3:checked ~ .tab-content .tab-panel-3 {
+  display: block;
+}
+#case-0:checked ~ .tab-labels .tab-label-0,
+#case-1:checked ~ .tab-labels .tab-label-1,
+#case-2:checked ~ .tab-labels .tab-label-2,
+#case-3:checked ~ .tab-labels .tab-label-3 {
+  border-color: #c9a961;
+  color: #c9a961;
+}
