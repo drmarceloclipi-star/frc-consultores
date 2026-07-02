@@ -18,16 +18,16 @@ const CTASection = ({ locale = "en" }: CTASectionProps) => {
   }
 
   return (
-    <section className="relative w-full min-h-[500px] bg-[#2f4858] flex items-center justify-center px-6 sm:px-6 py-[120px] md:py-[120px] lg:py-[120px] overflow-hidden">
+    <section className="frc-glow relative w-full min-h-[500px] flex items-center justify-center px-6 sm:px-6 py-[120px] md:py-[120px] lg:py-[120px] overflow-hidden">
       {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-[700px]">
         {/* Heading */}
-        <h2 className="mb-2 sm:mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] text-white">
+        <h2 className="font-display mb-2 sm:mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.2] text-white">
           {t.cta.heading}
         </h2>
 
         {/* Subheading */}
-        <h3 className="mb-6 sm:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.2] text-[#c9a961]">
+        <h3 className="font-display mb-6 sm:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold italic leading-[1.2] text-[#c9a961]">
           {t.cta.subheading}
         </h3>
 
@@ -48,15 +48,15 @@ const CTASection = ({ locale = "en" }: CTASectionProps) => {
 
           {/* Secondary Button */}
           <Link
-            href={`/${locale}/academy`}
-            className="inline-block px-8 py-3 sm:py-4 border border-[#c9a961] text-[#c9a961] font-semibold text-base rounded-lg transition-all duration-200 hover:bg-[#c9a961] hover:bg-opacity-10 active:bg-opacity-20 whitespace-nowrap"
+            href={`/${locale}/about`}
+            className="inline-block px-8 py-3 sm:py-4 border border-[#c9a961] text-[#c9a961] font-semibold text-base rounded-lg transition-all duration-200 hover:bg-[#c9a961]/10 active:bg-[#c9a961]/20 whitespace-nowrap"
           >
             {t.cta.exploreAcademy}
           </Link>
         </div>
       </div>
 
-      <ContactFormModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      <ContactFormModal isOpen={isModalOpen} onClose={handleCloseModal} locale={locale} />
     </section>
   )
 }

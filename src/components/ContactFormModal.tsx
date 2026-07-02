@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { X } from "lucide-react"
 import { getTranslations, type Locale } from "@/lib/translations"
 
@@ -39,14 +39,12 @@ export function ContactFormModal({ isOpen, onClose, solutionType, locale = "en" 
 
     if (solutionType) {
       const lower = solutionType.toLowerCase()
-      if (lower.includes("training") || lower.includes("workshop") || lower.includes("webinar") || lower.includes("academy")) {
+      if (lower.includes("consulting")) {
         options.training = true
-      } else if (lower.includes("consulting")) {
+      } else if (lower.includes("automation")) {
         options.consulting = true
-      } else if (lower.includes("implementation")) {
+      } else if (lower.includes("toolkit")) {
         options.implementation = true
-      } else if (lower.includes("automation") || lower.includes("toolkit")) {
-        options.consulting = true
       } else {
         options.setupCall = true
       }
@@ -72,18 +70,57 @@ export function ContactFormModal({ isOpen, onClose, solutionType, locale = "en" 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", { ...formData, options: displayedOptions, privacyAccepted, solutionType })
+    const interests = [
+      displayedOptions.setupCall && t.contactForm.setupCall,
+      displayedOptions.training && t.contactForm.training,
+      displayedOptions.consulting && t.contactForm.consulting,
+      displayedOptions.implementation && t.contactForm.implementation,
+    ].filter(Boolean)
+    const subject =
+      locale === "pt"
+        ? `Contato pelo site — ${formData.name}`
+        : `Website contact — ${formData.name}`
+    const bodyLines = [
+      `${t.contactForm.nameLabel}: ${formData.name}`,
+      `${t.contactForm.emailLabel}: ${formData.email}`,
+      formData.company && `${t.contactForm.companyLabel}: ${formData.company}`,
+      interests.length > 0 && `${t.contactForm.requestMoreInfo} ${interests.join(", ")}`,
+      "",
+      formData.message,
+    ].filter((line): line is string => typeof line === "string")
+    window.location.href = `mailto:contato@frcconsultores.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`
     setFormData({ name: "", email: "", company: "", message: "" })
     setSelectedOptions({ setupCall: false, training: false, consulting: false, implementation: false })
     setPrivacyAccepted(false)
     onClose()
   }
 
+  useEffect(() => {
+    if (!isOpen) return
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose()
+    }
+    document.addEventListener("keydown", handleKey)
+    document.body.style.overflow = "hidden"
+    return () => {
+      document.removeEventListener("keydown", handleKey)
+      document.body.style.overflow = ""
+    }
+  }, [isOpen, onClose])
+
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      <div className="relative w-full max-w-md rounded-lg bg-white p-8 shadow-lg">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        className="relative max-h-[90dvh] w-full max-w-md overflow-y-auto rounded-lg bg-white p-6 sm:p-8 shadow-lg"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Close Button */}
         <button
           onClick={onClose}

@@ -58,12 +58,12 @@ export function SolutionsSection({ locale = "en" }: SolutionsSectionProps) {
   }
 
   return (
-    <section className="relative w-full bg-white py-20 md:py-32 lg:py-32">
+    <section id="solutions" className="relative w-full bg-white py-20 md:py-32 lg:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16 flex flex-col items-start md:mb-20 lg:mb-24">
           {/* Heading */}
-          <h2 className="mb-4 text-4xl font-bold leading-tight md:text-5xl">
+          <h2 className="font-display mb-4 text-4xl font-semibold leading-tight md:text-5xl">
             <span className="text-[#2f4858]">{t.solutions.heading1}</span>
             <span className="text-[#c9a961]">{t.solutions.heading2}</span>
           </h2>

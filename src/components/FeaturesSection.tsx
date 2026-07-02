@@ -11,7 +11,7 @@ interface FeatureCardProps {
 function FeatureCard({ title, description, ctaText, href }: FeatureCardProps) {
   return (
     <Link href={href}>
-      <div className="flex flex-col h-full bg-white border border-[#e5e7eb] rounded-lg sm:rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.12)] hover:scale-[1.02] transition-all duration-300 p-8 sm:p-10">
+      <div className="frc-card flex flex-col h-full bg-white border border-[#e5e7eb] rounded-lg sm:rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.08)] p-8 sm:p-10 overflow-hidden">
         {/* Title */}
         <h3 className="mb-4 text-xl sm:text-2xl font-bold text-[#2f4858]">
           {title}
@@ -44,7 +44,7 @@ export function FeaturesSection({ locale = "en" }: FeaturesSectionProps) {
         {/* Header */}
         <div className="mb-12 sm:mb-16 lg:mb-20">
           {/* Heading */}
-          <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+          <h2 className="font-display mb-4 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
             <span className="text-[#2f4858]">{t.features.heading1}</span>
             <span className="text-[#c9a961]">{t.features.heading2}</span>
           </h2>

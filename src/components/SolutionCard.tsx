@@ -1,14 +1,14 @@
 "use client"
 
 import { LucideIcon } from "lucide-react"
-import { getTranslations, type Locale } from "@/lib/translations"
+import { type Locale } from "@/lib/translations"
 
 interface SolutionCardProps {
   title: string
   subtitle: string
   description: string
   icon: LucideIcon
-  includes: string[]
+  includes: readonly string[]
   onDiscuss?: () => void
   locale?: Locale
 }
@@ -22,9 +22,8 @@ export function SolutionCard({
   onDiscuss,
   locale = "en",
 }: SolutionCardProps) {
-  const t = getTranslations(locale)
   return (
-    <div className="flex flex-col h-full bg-white border border-[#e5e7eb] rounded-lg shadow-[0_1px_3px_rgba(0,0,0,0.1)] p-8 hover:shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition-shadow duration-200">
+    <div className="frc-card flex flex-col h-full bg-white border border-[#e5e7eb] rounded-lg shadow-[0_1px_3px_rgba(0,0,0,0.1)] p-8 overflow-hidden">
       {/* Icon */}
       <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#c9a961]">
         <Icon className="h-8 w-8 text-white" strokeWidth={2} />

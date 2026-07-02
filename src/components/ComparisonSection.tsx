@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { getTranslations, type Locale } from "@/lib/translations"
 
 interface StatItem {
@@ -12,7 +11,7 @@ interface StatItem {
 function ComparisonStat({ stat }: { stat: StatItem }) {
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="mb-3 text-4xl font-bold text-[#c9a961] md:text-5xl">
+      <div className="font-display mb-3 text-4xl font-semibold text-[#c9a961] md:text-5xl">
         {stat.number}
       </div>
       <p className="mb-2 text-sm font-normal text-[#6b8393] md:text-base">
@@ -44,7 +43,7 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
         {/* Header */}
         <div className="mb-16 flex flex-col items-center text-center md:mb-20 lg:mb-24">
           {/* Main Heading */}
-          <h2 className="mb-6 text-4xl font-bold leading-tight text-[#2f4858] md:text-5xl">
+          <h2 className="font-display mb-6 text-4xl font-semibold leading-tight text-[#2f4858] md:text-5xl">
             {t.comparison.heading}
           </h2>
 
