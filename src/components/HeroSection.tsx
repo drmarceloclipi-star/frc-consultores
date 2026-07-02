@@ -65,7 +65,8 @@ const HeroSection = ({ locale = "en" }: HeroSectionProps) => {
             </p>
 
             {/* Main Heading */}
-            <h1 className="frc-rise frc-rise-2 font-display mb-4 text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05]">
+            {/* No entrance animation: this is the LCP element */}
+            <h1 className="font-display mb-4 text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05]">
               <span className="text-[#22333f]">{t.hero.titlePart1}</span>{" "}
               <span className="text-[#c9a961]">{t.hero.titlePart2}</span>
             </h1>

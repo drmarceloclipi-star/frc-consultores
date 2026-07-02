@@ -1,5 +1,16 @@
 import Link from "next/link"
+import type { Metadata } from "next"
 import { Footer } from "@/components/Footer"
+import { pageMetadata } from "@/lib/seo"
+import { JsonLd, breadcrumbSchema } from "@/lib/schema"
+
+export const metadata: Metadata = pageMetadata({
+  locale: "en",
+  path: "/about",
+  title: "About Us — Software Company since 2015",
+  description:
+    "Learn about FRC Consultores Associados: history, registered activities (software, IT consulting and data CNAEs) and how we work.",
+})
 
 const activities = [
   {
@@ -31,6 +42,12 @@ const activities = [
 export default function About() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/en" },
+          { name: "About", path: "/en/about" },
+        ])}
+      />
       <main className="flex-1">
         <section className="w-full bg-white py-20 md:py-32">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

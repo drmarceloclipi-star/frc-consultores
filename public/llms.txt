@@ -1,0 +1,30 @@
+# FRC Consultores Associados
+
+> FRC Consultores Associados LTDA (CNPJ 22.052.463/0001-30) é uma empresa brasileira de desenvolvimento e licenciamento de software, com sede em Recife-PE e desenvolvimento em Joinville-SC, atuando desde 2015 (linha de software desde 2026). Oferece desenvolvimento de software sob medida e não-customizável, aplicativos móveis, sistemas web, consultoria em TI e hospedagem/tratamento de dados.
+
+## Páginas principais (Português)
+
+- [Início](https://frcconsultores.web.app/pt): Visão geral dos serviços — desenvolvimento de software, consultoria em TI, hospedagem e dados.
+- [Sobre](https://frcconsultores.web.app/pt/about): História da empresa, atividades registradas e forma de trabalhar.
+- [Dados Legais / Contato](https://frcconsultores.web.app/pt/impressum): Dados legais e de contato da empresa.
+
+## Main pages (English)
+
+- [Home](https://frcconsultores.web.app/en): Overview of services — software development, IT consulting, hosting and data.
+- [About](https://frcconsultores.web.app/en/about): Company history, registered activities and working model.
+- [Legal Data / Contact](https://frcconsultores.web.app/en/impressum): Legal and contact information.
+
+## Dados da empresa
+
+- Razão social: FRC Consultores Associados LTDA
+- CNPJ: 22.052.463/0001-30
+- NIRE: 26.2.0224315-1 (JUCEPE)
+- CNAEs: 62.03-1 (software não-customizável), 62.02-3 (software customizável), 62.04-0 (consultoria em TI), 63.11-9 (hospedagem e dados)
+- Sede: Recife, PE, Brasil
+- Unidade de desenvolvimento: Joinville, SC, Brasil
+- Fundação: 16/03/2015 (linha de negócio de software desde julho de 2026)
+- Contato: contato@frcconsultores.com.br · +55 47 99692-0935
+
+## Nota
+
+Este arquivo segue a convenção llms.txt para facilitar a descoberta e citação do conteúdo por agentes de IA. Não substitui o robots.txt.

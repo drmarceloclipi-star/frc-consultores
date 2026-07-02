@@ -5,6 +5,16 @@ import { FeaturesSection } from "@/components/FeaturesSection"
 import { CTASection } from "@/components/CTASection"
 import { Footer } from "@/components/Footer"
 import { Reveal } from "@/components/Reveal"
+import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = pageMetadata({
+  locale: "pt",
+  path: "",
+  title: "Desenvolvimento de Software Sob Medida",
+  description:
+    "Desenvolvimento e licenciamento de software, aplicativos móveis, sistemas web, consultoria em TI e hospedagem. Sede em Recife-PE, desenvolvimento em Joinville-SC.",
+})
 
 export default function Home() {
   return (

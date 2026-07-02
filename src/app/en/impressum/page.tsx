@@ -1,8 +1,20 @@
+import type { Metadata } from "next"
 import { Footer } from "@/components/Footer"
+import { pageMetadata } from "@/lib/seo"
+import { JsonLd, contactPageSchema } from "@/lib/schema"
+
+export const metadata: Metadata = pageMetadata({
+  locale: "en",
+  path: "/impressum",
+  title: "Legal Data and Contact",
+  description:
+    "Legal data of FRC Consultores Associados LTDA: CNPJ 22.052.463/0001-30, NIRE 26.2.0224315-1, headquartered in Recife, Brazil, contact and LGPD privacy policy.",
+})
 
 export default function Impressum() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
+      <JsonLd data={contactPageSchema("en")} />
       <main className="flex-1">
         <section className="w-full bg-white py-20 md:py-32">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

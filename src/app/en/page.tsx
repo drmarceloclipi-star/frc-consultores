@@ -5,6 +5,16 @@ import { FeaturesSection } from "@/components/FeaturesSection"
 import { CTASection } from "@/components/CTASection"
 import { Footer } from "@/components/Footer"
 import { Reveal } from "@/components/Reveal"
+import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = pageMetadata({
+  locale: "en",
+  path: "",
+  title: "Custom Software Development",
+  description:
+    "Software development and licensing, mobile apps, web systems, IT consulting and hosting. Headquartered in Recife, built in Joinville, Brazil.",
+})
 
 export default function Home() {
   return (

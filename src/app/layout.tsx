@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Fraunces } from "next/font/google"
+import { JsonLd, organizationSchema, websiteSchema } from "@/lib/schema"
+import { BASE_URL } from "@/lib/seo"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -19,9 +21,11 @@ const fraunces = Fraunces({
 })
 
 export const metadata: Metadata = {
-  title: "FRC Consultores Associados — Desenvolvimento de Software",
-  description:
-    "FRC Consultores Associados LTDA (CNPJ 22.052.463/0001-30): desenvolvimento e licenciamento de software, aplicativos móveis, consultoria em TI e hospedagem. Sede em Recife-PE, desenvolvimento em Joinville-SC. Empresa desde 2015, software desde 2026.",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "FRC Consultores Associados — Desenvolvimento de Software",
+    template: "%s | FRC Consultores",
+  },
 }
 
 export default function RootLayout({
@@ -35,6 +39,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <JsonLd data={organizationSchema} />
+        <JsonLd data={websiteSchema} />
         {children}
       </body>
     </html>
