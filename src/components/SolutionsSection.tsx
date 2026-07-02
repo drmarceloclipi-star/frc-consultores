@@ -5,6 +5,7 @@ import { Briefcase, Cog, Wrench } from "lucide-react"
 import { SolutionCard } from "./SolutionCard"
 import { ContactFormModal } from "./ContactFormModal"
 import { getTranslations, type Locale } from "@/lib/translations"
+import { TechGrid } from "./TechGrid"
 
 interface SolutionsSectionProps {
   locale?: Locale
@@ -59,9 +60,13 @@ export function SolutionsSection({ locale = "en" }: SolutionsSectionProps) {
 
   return (
     <section id="solutions" className="relative w-full bg-white py-20 md:py-32 lg:py-32">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <TechGrid />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16 flex flex-col items-start md:mb-20 lg:mb-24">
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#6b8393]">
+            <span className="text-[#c9a961]">{"//"}</span> {t.solutions.eyebrow}
+          </p>
           {/* Heading */}
           <h2 className="font-display mb-4 text-4xl font-semibold leading-tight md:text-5xl">
             <span className="text-[#2f4858]">{t.solutions.heading1}</span>

@@ -18,6 +18,7 @@ export const enTranslations = {
   },
   // Solutions Section
   solutions: {
+    eyebrow: "services",
     heading1: "What We ",
     heading2: "Do",
     intro:
@@ -62,6 +63,7 @@ export const enTranslations = {
   },
   // Comparison Section
   comparison: {
+    eyebrow: "comparison",
     heading: "Off-the-Shelf vs. Custom-Built",
     intro:
       "Generic solutions force your business to adapt to the software. We build software that adapts to your business.",
@@ -107,6 +109,7 @@ export const enTranslations = {
   },
   // Features Section
   features: {
+    eyebrow: "why us",
     heading1: "Why ",
     heading2: "FRC",
     subtitle:

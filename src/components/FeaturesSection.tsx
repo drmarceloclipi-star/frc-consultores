@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { getTranslations, type Locale } from "@/lib/translations"
+import { TechGrid } from "./TechGrid"
 
 interface FeatureCardProps {
   title: string
@@ -39,10 +40,14 @@ export function FeaturesSection({ locale = "en" }: FeaturesSectionProps) {
   const t = getTranslations(locale)
   const features = t.features.cards
   return (
-    <section className="w-full bg-white py-20 sm:py-24 lg:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full bg-white py-20 sm:py-24 lg:py-24">
+      <TechGrid />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12 sm:mb-16 lg:mb-20">
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#6b8393]">
+            <span className="text-[#c9a961]">{"//"}</span> {t.features.eyebrow}
+          </p>
           {/* Heading */}
           <h2 className="font-display mb-4 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
             <span className="text-[#2f4858]">{t.features.heading1}</span>

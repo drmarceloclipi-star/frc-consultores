@@ -7,6 +7,26 @@ export function HeroIllustration() {
         className="w-full h-auto"
         role="img"
       >
+        {/* Data flow: desktop -> phone */}
+        <path
+          d="M 200 290 C 200 340, 280 360, 348 350"
+          stroke="#c9a961"
+          strokeWidth="2"
+          strokeDasharray="6 10"
+          strokeLinecap="round"
+          opacity="0.7"
+          className="frc-flow"
+        />
+        <path
+          d="M 380 96 C 440 100, 460 140, 462 180"
+          stroke="#c9a961"
+          strokeWidth="2"
+          strokeDasharray="6 10"
+          strokeLinecap="round"
+          opacity="0.45"
+          className="frc-flow frc-flow-delay"
+        />
+
         {/* Desktop code window */}
         <g className="frc-float-slow">
           <rect x="20" y="30" width="360" height="260" rx="14" fill="#2f4858" />
@@ -27,7 +47,26 @@ export function HeroIllustration() {
           <rect x="88" y="196" width="150" height="10" rx="5" fill="#46647a" />
           <rect x="48" y="222" width="70" height="10" rx="5" fill="#c9a961" />
           <rect x="130" y="222" width="110" height="10" rx="5" fill="#46647a" />
-          <rect x="48" y="248" width="200" height="10" rx="5" fill="#3d5a6e" />
+
+          {/* Line being written + caret */}
+          <rect
+            x="48"
+            y="248"
+            width="200"
+            height="10"
+            rx="5"
+            fill="#3d5a6e"
+            className="frc-type"
+          />
+          <rect
+            x="254"
+            y="245"
+            width="3"
+            height="16"
+            rx="1.5"
+            fill="#c9a961"
+            className="frc-caret"
+          />
         </g>
 
         {/* Phone overlapping */}
@@ -69,9 +108,31 @@ export function HeroIllustration() {
           <rect x="378" y="344" width="54" height="10" rx="5" fill="#2f4858" />
         </g>
 
-        {/* Gold orbit dot */}
-        <circle cx="60" cy="330" r="8" fill="#c9a961" className="frc-float-fast" />
-        <circle cx="470" cy="60" r="6" fill="#c9a961" opacity="0.6" className="frc-float-slow" />
+        {/* Network nodes with pulse rings */}
+        <g className="frc-float-fast">
+          <circle cx="60" cy="330" r="8" fill="#c9a961" />
+          <circle
+            cx="60"
+            cy="330"
+            r="8"
+            fill="none"
+            stroke="#c9a961"
+            strokeWidth="2"
+            className="frc-pulse"
+          />
+        </g>
+        <g className="frc-float-slow">
+          <circle cx="470" cy="60" r="6" fill="#c9a961" opacity="0.6" />
+          <circle
+            cx="470"
+            cy="60"
+            r="6"
+            fill="none"
+            stroke="#c9a961"
+            strokeWidth="2"
+            className="frc-pulse frc-pulse-delay"
+          />
+        </g>
       </svg>
     </div>
   )

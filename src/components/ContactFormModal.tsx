@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useMemo, useEffect } from "react"
+import { createPortal } from "react-dom"
 import { X } from "lucide-react"
 import { getTranslations, type Locale } from "@/lib/translations"
 
@@ -110,7 +111,7 @@ export function ContactFormModal({ isOpen, onClose, solutionType, locale = "en" 
 
   if (!isOpen) return null
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
       onClick={onClose}
@@ -277,6 +278,7 @@ export function ContactFormModal({ isOpen, onClose, solutionType, locale = "en" 
           </button>
         </form>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }

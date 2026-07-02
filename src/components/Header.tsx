@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
-import { HeaderContactModal } from "./HeaderContactModal"
+import { ContactFormModal } from "./ContactFormModal"
 import { getTranslations, type Locale } from "@/lib/translations"
 
 interface HeaderProps {
@@ -133,7 +133,7 @@ export function Header({ locale = "en" }: HeaderProps) {
         </nav>
       )}
 
-      <HeaderContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} locale={locale} />
+      <ContactFormModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} locale={locale} />
     </header>
   )
 }

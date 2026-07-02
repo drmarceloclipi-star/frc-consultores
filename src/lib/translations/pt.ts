@@ -18,6 +18,7 @@ export const ptTranslations = {
   },
   // Solutions Section
   solutions: {
+    eyebrow: "serviços",
     heading1: "O Que ",
     heading2: "Fazemos",
     intro:
@@ -62,6 +63,7 @@ export const ptTranslations = {
   },
   // Comparison Section
   comparison: {
+    eyebrow: "comparativo",
     heading: "Software de Prateleira vs. Sob Medida",
     intro:
       "Soluções genéricas obrigam o seu negócio a se adaptar ao software. Nós construímos o software que se adapta ao seu negócio.",
@@ -107,6 +109,7 @@ export const ptTranslations = {
   },
   // Features Section
   features: {
+    eyebrow: "diferenciais",
     heading1: "Por Que a ",
     heading2: "FRC",
     subtitle:

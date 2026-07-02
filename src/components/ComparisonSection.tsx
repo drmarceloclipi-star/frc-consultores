@@ -1,6 +1,7 @@
 "use client"
 
 import { getTranslations, type Locale } from "@/lib/translations"
+import { TechGrid } from "./TechGrid"
 
 interface StatItem {
   number: string
@@ -11,7 +12,7 @@ interface StatItem {
 function ComparisonStat({ stat }: { stat: StatItem }) {
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="font-display mb-3 text-4xl font-semibold text-[#c9a961] md:text-5xl">
+      <div className="mb-3 font-mono text-4xl font-semibold tracking-tight text-[#c9a961] [font-variant-numeric:tabular-nums] md:text-5xl">
         {stat.number}
       </div>
       <p className="mb-2 text-sm font-normal text-[#6b8393] md:text-base">
@@ -39,9 +40,13 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
       id="comparison"
       className="relative w-full bg-[#f8f9fa] py-20 md:py-32 lg:py-32"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <TechGrid />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 flex flex-col items-center text-center md:mb-20 lg:mb-24">
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#6b8393]">
+            <span className="text-[#c9a961]">{"//"}</span> {t.comparison.eyebrow}
+          </p>
           {/* Main Heading */}
           <h2 className="font-display mb-6 text-4xl font-semibold leading-tight text-[#2f4858] md:text-5xl">
             {t.comparison.heading}
