@@ -1,241 +1,155 @@
 export const ptTranslations = {
   // Header
   header: {
-    whyNow: "Por Que Agora",
-    solutions: "Soluções",
-    academy: "Academia",
+    whyNow: "Início",
+    solutions: "Serviços",
     about: "Sobre Nós",
-    blog: "Blog",
     contact: "Contato",
   },
   // Hero Section
   hero: {
-    subtitle: "A próxima geração de agentes de IA está aqui.",
-    titlePart1: "Coloque Agentes",
-    titlePart2: "de IA para Trabalhar",
+    subtitle: "Desenvolvido em Joinville · Sede em Recife · Desde 2026",
+    titlePart1: "Software Sob Medida",
+    titlePart2: "para o Seu Negócio",
     description:
-      "A mesma tecnologia que transformou o desenvolvimento de software agora está automatizando operações comerciais. Nós o ajudamos a construir, otimizar e implantar.",
-    seeDifference: "Veja o Que Diferencia",
-    viewExamples: "Ver Exemplos Reais",
+      "A FRC Consultores Associados desenvolve e licencia programas de computador, aplicativos móveis e sistemas web — com consultoria em tecnologia da informação e serviços de hospedagem de ponta a ponta.",
+    seeDifference: "Por Que Sob Medida?",
+    viewExamples: "Nossos Serviços",
   },
   // Solutions Section
   solutions: {
-    heading1: "Como Podemos ",
-    heading2: "Ajudar",
+    heading1: "O Que ",
+    heading2: "Fazemos",
     intro:
-      "Quer construir capacidade interna ou fazer parceria conosco para implementação, o guiamos de estratégia até implementação.",
+      "Do primeiro rascunho à publicação nas lojas de aplicativos, cuidamos de todo o ciclo de vida do seu software.",
     consulting: {
-      title: "Consultoria",
-      subtitle: "Encontre os casos de uso corretos e construa uma estratégia",
+      title: "Desenvolvimento de Software",
+      subtitle: "Aplicativos e sistemas do conceito à publicação",
       description:
-        "Não sabe por onde começar? O ajudamos a identificar oportunidades de alto impacto, executar experimentos controlados e construir um roteiro para adoção de agentes de IA.",
+        "Desenvolvemos e licenciamos programas de computador customizáveis e não-customizáveis: aplicativos móveis, sistemas web e produtos digitais próprios, construídos com tecnologias atuais.",
       includes: [
-        "Workshops de descoberta",
-        "Identificação de casos de uso",
-        "Programas piloto (sprints de 4 semanas)",
-        "Consultoria estratégica",
+        "Aplicativos iOS e Android",
+        "Sistemas e plataformas web",
+        "APIs e integrações",
+        "Publicação na App Store e Google Play",
       ],
     },
     automation: {
-      title: "Automação",
-      subtitle: "Construímos, implantamos e otimizamos agentes para você",
+      title: "Consultoria em TI",
+      subtitle: "Decisões de tecnologia com base em experiência",
       description:
-        "Precisa de uma solução completa? Projetamos, desenvolvemos e integramos agentes personalizados adaptados aos seus workflows e sistemas.",
+        "Apoiamos empresas na escolha, arquitetura e evolução de suas soluções de tecnologia da informação, do diagnóstico à implantação.",
       includes: [
-        "Desenvolvimento de agentes personalizados",
-        "Integração de sistemas",
-        "Automação de fluxos de trabalho",
-        "Otimização contínua",
+        "Arquitetura de sistemas",
+        "Seleção de tecnologias",
+        "Revisão de código e segurança",
+        "Apoio à transformação digital",
       ],
     },
     toolkit: {
-      title: "Kit de Ferramentas",
-      subtitle: "Tudo o que você precisa para construir agentes poderosos",
+      title: "Hospedagem e Dados",
+      subtitle: "Sua aplicação no ar, com dados bem cuidados",
       description:
-        "Fornecemos estruturas, modelos e blocos de construção para criar agentes de IA prontos para produção — para que sua equipe passe de ideia a implantação rapidamente.",
+        "Operamos serviços de tratamento de dados, provedores de serviços de aplicação e hospedagem na internet, mantendo suas soluções disponíveis e monitoradas.",
       includes: [
-        "Estruturas de desenvolvimento de agentes",
-        "Modelos pré-construídos e componentes",
-        "Bibliotecas de integração",
-        "Melhores práticas e documentação",
+        "Hospedagem de aplicações",
+        "Tratamento de dados",
+        "Serviços de aplicação (ASP)",
+        "Monitoramento e manutenção",
       ],
     },
     discuss: "Discutir",
   },
   // Comparison Section
   comparison: {
-    heading: "Não é seu \"Assistente de IA\" Comum",
+    heading: "Software de Prateleira vs. Sob Medida",
     intro:
-      "A maioria dos \"agentes de IA\" são chatbots disfarçados. A próxima geração, baseada em avanços de agentes de código, realmente realiza trabalho.",
-    oldGeneration: "Geração Antiga",
-    newGeneration: "Nova Geração",
-    agentic: "(IA Agêntica)",
+      "Soluções genéricas obrigam o seu negócio a se adaptar ao software. Nós construímos o software que se adapta ao seu negócio.",
+    oldGeneration: "Software de Prateleira",
+    newGeneration: "Sob Medida",
+    agentic: "(FRC)",
     oldItems: [
-      "Responder perguntas",
-      "Precisam de prompts perfeitos",
-      "Trabalhar em uma ferramenta por vez",
-      "Requerem supervisão constante",
-      "Adivinhar contexto",
-      "Quebram em casos extremos",
+      "Funcionalidades genéricas",
+      "Licenças recorrentes por usuário",
+      "Processos engessados",
+      "Integrações limitadas",
+      "Dados presos ao fornecedor",
+      "Evolução fora do seu controle",
     ],
     newItems: [
-      "Executar fluxos de trabalho multi-etapas",
-      "Descobrir o que precisa ser feito",
-      "Orquestrar entre sistemas",
-      "Trabalhar autonomamente com checkpoints",
-      "Entender seu ambiente completo",
-      "Lidar com complexidade inteligentemente",
+      "Construído para o seu processo",
+      "Propriedade do que foi contratado",
+      "Evolui junto com o negócio",
+      "Integra com seus sistemas",
+      "Seus dados sob seu controle",
+      "Suporte direto com quem desenvolveu",
     ],
-    breakthrough: "O Avanço",
+    breakthrough: "Nossa Forma de Trabalhar",
     breakthroughText:
-      "Em 2024, agentes de código como Claude Code e Cursor revolucionaram o desenvolvimento de software ao aprender a navegar ambientes complexos, dividir tarefas e executar código confiável. Este mesmo avanço agora está alimentando a próxima geração de agentes comerciais como Claude & Microsoft Cowork.",
+      "Trabalhamos em ciclos curtos, com entregas frequentes e comunicação direta. Cada projeto começa pelo entendimento do problema — e só depois pela tecnologia. O resultado é software que resolve, sem excesso de complexidade.",
     stats: [
       {
-        number: "80%",
-        description: "em tarefas individuais de codificação",
-        citation: "(Pesquisa Anthropic)",
+        number: "2015",
+        description: "ano de fundação, em Recife-PE",
+        citation: "(Receita Federal / JUCEPE)",
       },
       {
-        number: "2,5 hrs",
-        description: "por semana em trabalho rotineiro",
-        citation: "(HUB International)",
+        number: "2026",
+        description: "expansão para desenvolvimento de software",
+        citation: "(alteração contratual JUCEPE, 01/07/2026)",
       },
       {
-        number: "78%",
-        description: "em todas as tarefas de desenvolvimento",
-        citation: "(Pesquisa Stack Overflow Developer Survey)",
+        number: "4",
+        description: "áreas de atuação em software e dados",
+        citation: "(CNAEs 62.02, 62.03, 62.04 e 63.11)",
       },
     ],
   },
   // Features Section
   features: {
-    heading1: "Entendemos ",
-    heading2: "IA Agêntica",
-    subtitle: "Enquanto outros ainda estão divulgando chatbots, estamos implementando o real.",
+    heading1: "Por Que a ",
+    heading2: "FRC",
+    subtitle:
+      "Uma empresa brasileira, estabelecida e com responsabilidade legal clara por trás de cada aplicativo publicado.",
     cards: [
       {
-        title: "Compreensão Técnica Profunda",
+        title: "Empresa Estabelecida",
         description:
-          "Entendemos arquiteturas de agentes do mundo da codificação. Sabemos como eles planejam, executam, lidam com erros e se adaptam. Isto é central em tudo o que fazemos.",
-        ctaText: "Leia mais →",
-        href: "/blog/coding-agents-beyond-coding",
+          "Sociedade limitada registrada na Junta Comercial de Pernambuco, com CNPJ ativo desde 2015. Identidade jurídica clara para parceiros, clientes e lojas de aplicativos.",
+        ctaText: "Ver dados legais →",
+        href: "/pt/impressum",
       },
       {
-        title: "Experiência de Plataforma",
+        title: "Ciclo Completo",
         description:
-          "Experiência prática com Claude Cowork e Microsoft Copilot Cowork. Sabemos o que eles podem (e não podem) fazer. Sabemos como aproveitar ao máximo.",
-        ctaText: "Leia mais →",
-        href: "/blog/microsoft-copilot-cowork-coding-agents-enterprise",
+          "Do levantamento de requisitos ao deploy e manutenção: projetamos, desenvolvemos, publicamos e operamos o software que entregamos.",
+        ctaText: "Ver serviços →",
+        href: "#solutions",
       },
       {
-        title: "Implantações Reais",
+        title: "Tecnologia Atual",
         description:
-          "Implementações comprovadas em vendas, operações, manufatura e cadeia de suprimentos, de integrações WhatsApp a orquestração ERP.",
-        ctaText: "Ver exemplos →",
-        href: "#case-studies",
+          "Trabalhamos com plataformas modernas de desenvolvimento web e mobile, priorizando segurança, desempenho e manutenção de longo prazo.",
+        ctaText: "Entenda a diferença →",
+        href: "#comparison",
       },
       {
-        title: "Orientação Honesta",
+        title: "Suporte Contínuo",
         description:
-          "O cenário evolui semanalmente. O ajudamos a experimentar rápido, aprender o que funciona e adaptar. Não vendemos um roteiro rígido de 6 meses.",
-        ctaText: "Leia mais →",
-        href: "/blog/ai-native-companies-german-tech-firms",
-      },
-    ],
-  },
-  // Case Studies Section
-  caseStudies: {
-    heading1: "Implementações Reais, ",
-    heading2: "Resultados Mensuráveis",
-    intro: "Veja como empresas estão transformando operações com agentes de IA de próxima geração.",
-    theChallenge: "O Desafio",
-    theSolution: "A Solução",
-    behindScenes: "🔧 Nos Bastidores",
-    resultsImpact: "Resultados e Impacto",
-    team: "Equipe:",
-    cases: [
-      {
-        tabLabel: "Automação de CRM",
-        category: "Vendas e Marketing",
-        heading: "Automação de CRM",
-        challenge:
-          "Equipes de vendas gastam horas atualizando manualmente registros de CRM, agendando acompanhamentos e sincronizando dados entre email, calendário e sistemas de gerenciamento de clientes.",
-        solution:
-          "Um agente de IA que monitora comunicações por email, atualiza automaticamente registros de CRM, agenda reuniões e garante que todas as interações com clientes sejam registradas e acessíveis em toda a equipe.",
-        behindScenes:
-          "O agente lê o contexto de email, extrai dados relevantes do cliente, consulta seu CRM via API, aplica regras de negócio para categorização e tempo de acompanhamento, e orquestra atualizações entre múltiplos sistemas, autonomamente.",
-        results: [
-          "Redução de 60% em entrada manual de dados de CRM",
-          "Melhoria de 90% na precisão dos dados",
-          "Zero acompanhamentos perdidos através de agendamento inteligente",
-          "Integração perfeita entre email, calendário e CRM",
-        ],
-        team: "Equipe de vendas de 8 pessoas, usuários não técnicos",
-      },
-      {
-        tabLabel: "Automação de Orçamentos",
-        category: "Operações de Vendas",
-        heading: "Automação de Orçamentos",
-        challenge:
-          "Engenheiros de vendas criam manualmente orçamentos puxando dados de múltiplos sistemas, calculando descontos e formatando documentos—um processo que leva 2-3 horas por orçamento.",
-        solution:
-          "Um agente de IA que monta orçamentos em tempo real acessando catálogos de produtos, mecanismos de preços, histórico de clientes e modelos de contratos, depois entrega documentos formatados prontos para assinatura.",
-        behindScenes:
-          "O agente acessa bancos de dados de produtos, calcula preços com regras de margem, faz referência cruzada do histórico de compras do cliente para oportunidades de venda adicional, extrai cláusulas de conformidade de modelos e gera automaticamente PDFs com campos de assinatura incorporados.",
-        results: [
-          "Tempo de geração de orçamento reduzido de 2-3 horas para 10 minutos",
-          "95% de precisão nos cálculos de preços",
-          "Aumento de 50% na conversão de orçamento para fechamento",
-          "Controle de versão de orçamento em tempo real e trilhas de auditoria",
-        ],
-        team: "Equipe de engenharia de vendas de 4 pessoas",
-      },
-      {
-        tabLabel: "Processamento de Pedidos e Controle de Qualidade",
-        category: "Operações e Manufatura",
-        heading: "Processamento de Pedidos e Controle de Qualidade",
-        challenge:
-          "A entrada de pedidos requer validação manual de dados em email, planilhas e sistemas ERP. Auditorias de qualidade ocorrem após o envio, deixando defeitos não detectados até que reclamações de clientes cheguem.",
-        solution:
-          "Um agente de IA que valida pedidos recebidos, verifica disponibilidade de inventário, sinaliza problemas de qualidade em tempo real, coordena com sistemas de warehouse e aciona ações corretivas automatizadas.",
-        behindScenes:
-          "O agente ingere dados de pedidos de múltiplos formatos, valida contra bancos de dados de SKU e níveis de estoque, aplica regras de qualidade e verificações de conformidade, coordena com sistemas de gerenciamento de warehouse e escalona exceções para supervisores humanos.",
-        results: [
-          "100% de validação de pedidos antes do processamento do warehouse",
-          "Redução de 40% no tempo de pedido para envio",
-          "Taxa de detecção de defeitos melhorada de 30% para 99%",
-          "Zero surpresas de qualidade voltadas para o cliente",
-        ],
-        team: "Equipe de operações de 12 pessoas entre entrada de pedidos e QC",
-      },
-      {
-        tabLabel: "Assistente de Planejamento de IA",
-        category: "Gerenciamento de Projetos e Recursos",
-        heading: "Assistente de Planejamento de IA",
-        challenge:
-          "Gerentes de projeto gastam dias coletando dados, consultando calendários e coordenando entre equipes para criar planos de projeto realistas. Mudanças de escopo desencadeiam em cascata não gerenciadas através de cronogramas.",
-        solution:
-          "Um agente de IA que constrói planos de projeto entendendo capacidade da equipe, dependências, riscos e velocidade histórica, depois ajusta automaticamente cronogramas conforme o escopo ou restrições mudam.",
-        behindScenes:
-          "O agente consulta calendários de equipe, acessa dados de projeto históricos e métricas de velocidade, modela dependências de tarefas, identifica itens do caminho crítico, simula cenários de alocação de recursos e gera automaticamente gráficos de Gantt com avaliações de risco.",
-        results: [
-          "Tempo de planejamento reduzido de dias para minutos",
-          "Precisão do cronograma melhorada para 95% dentro de ±5%",
-          "Identificação antecipada de 100% dos riscos do caminho crítico",
-          "Atualizações de cronograma em tempo real conforme as condições mudam",
-        ],
-        team: "Escritório de gerenciamento de projetos de 6 pessoas, múltiplas equipes",
+          "Hospedagem, monitoramento e evolução contínua depois da entrega. Software é um relacionamento de longo prazo, não um projeto que termina no lançamento.",
+        ctaText: "Sobre nós →",
+        href: "/pt/about",
       },
     ],
   },
   // CTA Section
   cta: {
-    heading: "O cenário de IA evolui a cada semana.",
-    subheading: "A única maneira de aprender é fazendo.",
+    heading: "Tem um projeto em mente?",
+    subheading: "Vamos construir juntos.",
     description:
-      "Não espere pela estratégia de IA \"perfeita\". Comece pequeno, experimente com fluxos de trabalho reais e aprenda o que funciona para sua equipe. As empresas que se movem mais rápido não estão planejando infinitamente. Eles estão testando, iterando e se adaptando.",
-    startConversation: "Inicie uma Conversa",
-    exploreAcademy: "Explore a Academia",
+      "Entre em contato para conversar sobre desenvolvimento de aplicativos, sistemas web, consultoria em TI ou hospedagem. Retornamos por e-mail ou telefone.",
+    startConversation: "Fale Conosco",
+    exploreAcademy: "Conheça a Empresa",
   },
   // Contact Form Modal
   contactForm: {
@@ -248,27 +162,15 @@ export const ptTranslations = {
     companyLabel: "Empresa",
     companyPlaceholder: "Sua empresa",
     messageLabel: "Mensagem",
-    messagePlaceholder: "Conte-nos sobre suas necessidades...",
+    messagePlaceholder: "Conte-nos sobre seu projeto...",
     setupCall: "Agendar uma chamada",
     requestMoreInfo: "Solicitar mais informações sobre:",
-    training: "Treinamento",
-    consulting: "Consultoria",
-    implementation: "Implementação",
+    training: "Desenvolvimento de Software",
+    consulting: "Consultoria em TI",
+    implementation: "Hospedagem e Dados",
     privacyLabel: "Li e aceito a",
     privacyLink: "Política de Privacidade",
     sendMessage: "Enviar Mensagem",
-  },
-  // Subscribe Modal
-  subscribeForm: {
-    heading: "Inscrever-se na Newsletter",
-    description: "Fique atualizado com atualizações, insights e notícias do Tavon.",
-    nameLabel: "Nome",
-    namePlaceholder: "Seu nome",
-    emailLabel: "Email",
-    emailPlaceholder: "seu@email.com",
-    privacyLabel: "Li e aceito a",
-    privacyLink: "Política de Privacidade",
-    subscribe: "Inscrever-se",
   },
   // Header Contact Modal
   headerContactForm: {
@@ -282,9 +184,9 @@ export const ptTranslations = {
     notePlaceholder: "Sua mensagem...",
     setupCall: "Agendar uma chamada",
     requestMoreInfo: "Solicitar mais informações sobre:",
-    training: "Treinamento",
-    consulting: "Consultoria",
-    implementation: "Implementação",
+    training: "Desenvolvimento de Software",
+    consulting: "Consultoria em TI",
+    implementation: "Hospedagem e Dados",
     privacyLabel: "Li e aceito a",
     privacyLink: "Política de Privacidade",
     cancel: "Cancelar",
@@ -292,8 +194,9 @@ export const ptTranslations = {
   },
   // Footer
   footer: {
-    copyright: "© 2026 Tavon. Todos os direitos reservados.",
-    imprint: "Aviso Legal",
+    copyright:
+      "© 2026 FRC Consultores Associados LTDA · CNPJ 22.052.463/0001-30 · Recife-PE. Todos os direitos reservados.",
+    imprint: "Dados Legais",
     language: "Idioma",
   },
 } as const

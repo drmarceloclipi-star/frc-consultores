@@ -11,16 +11,16 @@ export function Footer({ locale = "en" }: FooterProps) {
   return (
     <footer className="w-full border-t border-gray-200 bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-6">
+        <div className="flex flex-col items-center gap-4 py-6 text-center md:flex-row md:justify-between md:text-left">
         {/* Left Section: Copyright */}
-        <div className="flex-shrink-0">
+        <div className="min-w-0">
           <p className="text-sm font-normal text-gray-600">
             {t.footer.copyright}
           </p>
         </div>
 
         {/* Right Section: Imprint Link & Language Selector */}
-        <div className="flex items-center gap-6 md:gap-8 sm:gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-4 md:flex-shrink-0 md:gap-8">
           {/* Imprint Link */}
           <Link
             href={`/${locale}/impressum`}

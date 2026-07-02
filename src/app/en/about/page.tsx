@@ -1,37 +1,30 @@
-"use client"
+import Link from "next/link"
+import { Footer } from "@/components/Footer"
 
-interface TeamMember {
-  id: string
-  name: string
-  role: string
-  description: string
-  linkedinUrl: string
-}
-
-const teamMembers: TeamMember[] = [
+const activities = [
   {
-    id: "ml",
-    name: "Matthias Lübken",
-    role: "",
+    code: "62.03-1-00",
+    title: "Non-Customizable Software",
     description:
-      "With years of experience building and scaling developer tools, Matthias helps teams adopt AI agents effectively. He understands the challenges of implementing new technology in real-world business environments and guides you through the practical steps to success.",
-    linkedinUrl: "#",
+      "Development and licensing of non-customizable computer software — our primary activity, including our own apps published on the Apple and Google stores.",
   },
   {
-    id: "ip",
-    name: "Ivan Pedrazas",
-    role: "",
+    code: "62.02-3-00",
+    title: "Customizable Software",
     description:
-      "Ivan combines technical depth with practical business insight. He helps organizations build robust AI agent solutions that actually work in production, and trains teams to maintain and evolve them over time.",
-    linkedinUrl: "#",
+      "Development and licensing of customizable computer software, tailored to each client's processes.",
   },
   {
-    id: "ag",
-    name: "Dr. Anna Maria Gajda",
-    role: "Advisory",
+    code: "62.04-0-00",
+    title: "IT Consulting",
     description:
-      "Anna brings deep expertise in transforming complex processes into streamlined workflows. She works closely with teams to identify where AI agents can make the biggest impact and ensures smooth enablement and adoption across organizations.",
-    linkedinUrl: "#",
+      "Information technology consulting: architecture, technology selection and digital transformation support.",
+  },
+  {
+    code: "63.11-9-00",
+    title: "Data and Hosting",
+    description:
+      "Data processing, application service providers and internet hosting services.",
   },
 ]
 
@@ -39,60 +32,105 @@ export default function About() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <main className="flex-1">
-        {/* Header */}
         <section className="w-full bg-white py-20 md:py-32">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-20 flex flex-col items-center text-center">
-              <h1 className="mb-6 text-4xl font-bold text-[#2f4858] md:text-5xl">
-                The <span className="text-[#c9a961]">Agent Whisperers</span>
+              <h1 className="font-display mb-6 text-4xl font-semibold text-[#2f4858] md:text-5xl">
+                About <span className="text-[#c9a961]">FRC Consultores</span>
               </h1>
 
               <p className="mx-auto max-w-2xl text-base font-normal text-[#6b8393] leading-relaxed md:text-lg">
-                AI agents are transforming how businesses work. We&apos;ve been deep
-                in this space, learning what works and what doesn&apos;t. Now we&apos;re
-                here to help you navigate this transformation with confidence.
+                FRC Consultores Associados LTDA is a Brazilian company founded in 2015
+                in Recife, Brazil, with roots in consulting and engineering. In 2026 it
+                expanded its corporate purpose into software development and licensing,
+                information technology consulting, and hosting and data processing
+                services — now its primary activity, run from Joinville, Brazil.
               </p>
             </div>
 
-            {/* Team Members Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {teamMembers.map((member) => (
+            {/* Activities Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {activities.map((activity) => (
                 <div
-                  key={member.id}
-                  className="bg-white border border-gray-200 rounded-lg p-8 flex flex-col items-center text-center"
+                  key={activity.code}
+                  className="frc-card bg-white border border-gray-200 rounded-lg p-8 overflow-hidden"
                 >
-                  {/* Avatar Circle */}
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#2f4858] to-[#6b8393] flex items-center justify-center text-white text-3xl font-bold mb-6">
-                    {member.id.toUpperCase()}
-                  </div>
-
-                  {/* Name */}
-                  <h3 className="text-xl font-bold text-[#2f4858] mb-2">
-                    {member.name}
-                  </h3>
-
-                  {/* Role */}
-                  {member.role && (
-                    <p className="text-sm font-semibold text-[#c9a961] mb-4">
-                      {member.role}
-                    </p>
-                  )}
-
-                  {/* Description */}
-                  <p className="text-sm text-[#6b8393] leading-relaxed mb-6 flex-grow">
-                    {member.description}
+                  <p className="mb-2 font-mono text-xs tracking-wider text-[#a8873e]">
+                    CNAE {activity.code}
                   </p>
-
-                  {/* LinkedIn Link */}
-                  <a
-                    href={member.linkedinUrl}
-                    className="inline-flex items-center gap-2 text-[#c9a961] font-semibold hover:underline"
-                  >
-                    <span>🔗</span>
-                    Connect on LinkedIn
-                  </a>
+                  <h3 className="mb-3 text-xl font-bold text-[#2f4858]">
+                    {activity.title}
+                  </h3>
+                  <p className="text-sm text-[#6b8393] leading-relaxed">
+                    {activity.description}
+                  </p>
                 </div>
               ))}
+            </div>
+
+            {/* Where we are */}
+            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+              <div className="rounded-lg border border-gray-200 bg-white p-8">
+                <p className="mb-2 font-mono text-xs tracking-wider text-[#a8873e]">
+                  JOINVILLE · BRAZIL
+                </p>
+                <h3 className="mb-3 text-xl font-bold text-[#2f4858]">Development</h3>
+                <p className="text-sm text-[#6b8393] leading-relaxed">
+                  The software operation is led by partner Marcelo Hugo Resende
+                  Tiburtius Cavalcanti, who lives and works in Joinville, Brazil,
+                  heading software development, mobile apps and IT consulting.
+                </p>
+              </div>
+              <div className="rounded-lg border border-gray-200 bg-white p-8">
+                <p className="mb-2 font-mono text-xs tracking-wider text-[#a8873e]">
+                  RECIFE · BRAZIL
+                </p>
+                <h3 className="mb-3 text-xl font-bold text-[#2f4858]">
+                  Headquarters and Administration
+                </h3>
+                <p className="text-sm text-[#6b8393] leading-relaxed">
+                  The registered office and company administration are in Recife,
+                  Brazil, under managing partner Maria de Fátima Resende Cavalcanti.
+                </p>
+              </div>
+            </div>
+
+            {/* Company facts */}
+            <div className="mt-16 rounded-lg border border-gray-200 bg-[#fafbfc] p-8">
+              <h2 className="mb-6 text-2xl font-bold text-[#2f4858]">The Company</h2>
+              <dl className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 text-sm">
+                <div>
+                  <dt className="font-semibold text-[#2f4858]">Legal Name</dt>
+                  <dd className="text-[#6b8393]">FRC Consultores Associados LTDA</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-[#2f4858]">Tax ID (CNPJ)</dt>
+                  <dd className="text-[#6b8393]">22.052.463/0001-30</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-[#2f4858]">Founded</dt>
+                  <dd className="text-[#6b8393]">March 16, 2015</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-[#2f4858]">Software Division</dt>
+                  <dd className="text-[#6b8393]">since July 2026</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-[#2f4858]">Headquarters</dt>
+                  <dd className="text-[#6b8393]">Recife, Pernambuco, Brazil</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-[#2f4858]">Development</dt>
+                  <dd className="text-[#6b8393]">Joinville, Santa Catarina, Brazil</dd>
+                </div>
+              </dl>
+              <p className="mt-6 text-sm text-[#6b8393]">
+                Full registration details on the{" "}
+                <Link href="/en/impressum" className="text-[#c9a961] hover:underline">
+                  Legal Notice
+                </Link>{" "}
+                page.
+              </p>
             </div>
           </div>
         </section>
@@ -101,18 +139,21 @@ export default function About() {
         <section className="w-full bg-[#3a4d5c] py-20 md:py-32">
           <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
-              Let&apos;s Talk About Your Challenges
+              Let&apos;s talk about your project
             </h2>
             <p className="mb-8 text-base text-gray-100">
-              Whether you&apos;re just starting to explore AI agents or are ready to
-              implement them, we&apos;re here to help.
+              From the app to the infrastructure, we help bring your idea to life.
             </p>
-            <button className="bg-[#c9a961] text-[#2f4858] px-8 py-3 rounded font-semibold hover:bg-[#b0925a] transition">
-              Get in Touch
-            </button>
+            <Link
+              href="/en/impressum"
+              className="inline-block bg-[#c9a961] text-[#2f4858] px-8 py-3 rounded font-semibold hover:bg-[#b0925a] transition"
+            >
+              Contact Channels
+            </Link>
           </div>
         </section>
       </main>
+      <Footer locale="en" />
     </div>
   )
 }

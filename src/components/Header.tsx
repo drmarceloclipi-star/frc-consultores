@@ -19,10 +19,8 @@ export function Header({ locale = "en" }: HeaderProps) {
 
   const navItems = [
     { label: t.header.whyNow, href: "#", scrollToTop: true },
-    { label: t.header.solutions, href: "#case-studies" },
-    { label: t.header.academy, href: `/${locale}/academy` },
+    { label: t.header.solutions, href: "#solutions" },
     { label: t.header.about, href: `/${locale}/about` },
-    { label: t.header.blog, href: `/${locale}/blog` },
   ]
 
   const toggleMenu = () => {
@@ -49,12 +47,12 @@ export function Header({ locale = "en" }: HeaderProps) {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full h-16 bg-white/80 border-b border-gray-200">
+    <header className="sticky top-0 z-50 w-full h-16 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="mx-auto max-w-6xl h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center flex-shrink-0 mr-auto">
           <span className="text-lg md:text-xl font-bold text-[#2f4858]">
-            TAVON.ai
+            FRC Consultores
           </span>
         </Link>
 
