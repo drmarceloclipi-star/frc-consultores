@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-export const BASE_URL = "https://frcconsultores.web.app"
+export const BASE_URL = "https://frcconsultores.com.br"
 
 export function pageMetadata({
   locale,
@@ -9,11 +9,21 @@ export function pageMetadata({
   description,
 }: {
   locale: "pt" | "en"
-  path: "" | "/about" | "/impressum"
+  path: "" | "/about" | "/cases" | "/impressum" | "/services"
   title: string
   description: string
 }): Metadata {
   const url = `${BASE_URL}/${locale}${path}`
+  const socialImage = {
+    url: `${BASE_URL}/${locale}/opengraph-image`,
+    width: 1200,
+    height: 630,
+    alt:
+      locale === "pt"
+        ? "FRC Consultores — Desenvolvimento de Software Sob Medida"
+        : "FRC Consultores — Custom Software Development",
+  }
+
   return {
     title,
     description,
@@ -32,11 +42,13 @@ export function pageMetadata({
       siteName: "FRC Consultores",
       locale: locale === "pt" ? "pt_BR" : "en_US",
       type: "website",
+      images: [socialImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [socialImage],
     },
   }
 }

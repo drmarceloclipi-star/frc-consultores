@@ -3,8 +3,12 @@ export const enTranslations = {
   header: {
     whyNow: "Home",
     solutions: "Services",
+    cases: "Case Studies",
     about: "About Us",
     contact: "Contact",
+    navigationLabel: "Main navigation",
+    openMenuLabel: "Open navigation menu",
+    closeMenuLabel: "Close navigation menu",
   },
   // Hero Section
   hero: {
@@ -158,6 +162,7 @@ export const enTranslations = {
   contactForm: {
     heading: "Let's Talk",
     description: "Tell us about your needs and we'll get back to you shortly.",
+    closeLabel: "Close contact form",
     nameLabel: "Name",
     namePlaceholder: "Your name",
     emailLabel: "Email",

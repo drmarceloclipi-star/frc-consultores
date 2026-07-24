@@ -23,7 +23,7 @@ export default function Impressum() {
               Dados Legais / Contato
             </h1>
 
-            <div className="mb-12 space-y-2 text-[#6b8393]">
+            <div className="mb-12 space-y-2 text-frc-muted">
               <p className="font-semibold text-[#2f4858]">
                 FRC Consultores Associados LTDA
               </p>
@@ -54,7 +54,7 @@ export default function Impressum() {
                 Política de Privacidade
               </h2>
 
-              <p className="text-[#6b8393]">
+              <p className="text-frc-muted">
                 Tratamos dados pessoais de acordo com a Lei Geral de Proteção de Dados
                 Pessoais — LGPD (Lei nº 13.709/2018).
               </p>
@@ -62,7 +62,7 @@ export default function Impressum() {
               <div className="space-y-6">
                 <div>
                   <h3 className="mb-2 font-bold text-[#2f4858]">1. Controlador</h3>
-                  <p className="text-[#6b8393]">
+                  <p className="text-frc-muted">
                     A controladora responsável pelo tratamento de dados é a FRC
                     Consultores Associados LTDA, identificada acima.
                   </p>
@@ -72,7 +72,7 @@ export default function Impressum() {
                   <h3 className="mb-2 font-bold text-[#2f4858]">
                     2. Finalidade do tratamento
                   </h3>
-                  <p className="text-[#6b8393]">
+                  <p className="text-frc-muted">
                     Se você fornecer seu endereço de e-mail neste site, ele será usado
                     apenas para contatá-lo ou fornecer as informações que você
                     solicitou.
@@ -81,7 +81,7 @@ export default function Impressum() {
 
                 <div>
                   <h3 className="mb-2 font-bold text-[#2f4858]">3. Base legal</h3>
-                  <p className="text-[#6b8393]">
+                  <p className="text-frc-muted">
                     O tratamento é realizado com base no seu consentimento, conforme o
                     Art. 7º, inciso I, da LGPD.
                   </p>
@@ -91,7 +91,7 @@ export default function Impressum() {
                   <h3 className="mb-2 font-bold text-[#2f4858]">
                     4. Armazenamento de dados
                   </h3>
-                  <p className="text-[#6b8393]">
+                  <p className="text-frc-muted">
                     Seus dados são armazenados apenas pelo tempo necessário para a
                     finalidade declarada ou até que você revogue seu consentimento.
                   </p>
@@ -101,7 +101,7 @@ export default function Impressum() {
                   <h3 className="mb-2 font-bold text-[#2f4858]">
                     5. Compartilhamento de dados
                   </h3>
-                  <p className="text-[#6b8393]">
+                  <p className="text-frc-muted">
                     Não compartilhamos seus dados pessoais com terceiros, salvo
                     obrigação legal ou consentimento explícito.
                   </p>
@@ -109,13 +109,13 @@ export default function Impressum() {
 
                 <div>
                   <h3 className="mb-2 font-bold text-[#2f4858]">6. Seus direitos</h3>
-                  <p className="text-[#6b8393]">
+                  <p className="text-frc-muted">
                     Nos termos do Art. 18 da LGPD, você pode solicitar confirmação de
                     tratamento, acesso, correção, anonimização, portabilidade e
                     eliminação dos seus dados, além de revogar o consentimento a
                     qualquer momento.
                   </p>
-                  <p className="mt-2 text-[#6b8393]">
+                  <p className="mt-2 text-frc-muted">
                     Para exercer esses direitos, entre em contato pelo e-mail indicado
                     acima.
                   </p>
@@ -125,7 +125,7 @@ export default function Impressum() {
                   <h3 className="mb-2 font-bold text-[#2f4858]">
                     7. Revogação do consentimento
                   </h3>
-                  <p className="text-[#6b8393]">
+                  <p className="text-frc-muted">
                     Você pode revogar seu consentimento a qualquer momento. Isso não
                     afeta a licitude do tratamento realizado antes da revogação.
                   </p>
@@ -135,14 +135,14 @@ export default function Impressum() {
 
             {/* Footer note */}
             <div className="mt-16 border-t border-gray-200 pt-8">
-              <p className="text-sm text-[#6b8393]">
+              <p className="text-sm text-frc-muted">
                 © 2026 FRC Consultores Associados LTDA. Todos os direitos reservados.
               </p>
             </div>
           </div>
         </section>
       </main>
-      <Footer locale="pt" />
+      <Footer locale="pt" path="/impressum" />
     </div>
   )
 }

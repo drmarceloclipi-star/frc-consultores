@@ -11,7 +11,7 @@ interface FeatureCardProps {
 
 function FeatureCard({ title, description, ctaText, href }: FeatureCardProps) {
   return (
-    <Link href={href}>
+    <Link href={href} className="group">
       <div className="frc-card flex flex-col h-full bg-white border border-[#e5e7eb] rounded-lg sm:rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.08)] p-8 sm:p-10 overflow-hidden">
         {/* Title */}
         <h3 className="mb-4 text-xl sm:text-2xl font-bold text-[#2f4858]">
@@ -19,12 +19,12 @@ function FeatureCard({ title, description, ctaText, href }: FeatureCardProps) {
         </h3>
 
         {/* Description - flex-grow pushes CTA to bottom */}
-        <p className="mb-6 flex-grow text-base sm:text-[15px] text-[#6b8393] leading-[1.6] font-normal">
+        <p className="mb-6 flex-grow text-base sm:text-[15px] text-frc-muted leading-[1.6] font-normal">
           {description}
         </p>
 
         {/* CTA */}
-        <p className="text-base sm:text-[15px] font-semibold text-[#c9a961] hover:text-[#b8985a] transition-colors duration-200">
+        <p className="text-base sm:text-[15px] font-semibold text-frc-bronze underline decoration-1 underline-offset-4 transition-colors duration-200 group-hover:text-frc-ink">
           {ctaText}
         </p>
       </div>
@@ -45,17 +45,17 @@ export function FeaturesSection({ locale = "en" }: FeaturesSectionProps) {
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12 sm:mb-16 lg:mb-20">
-          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#6b8393]">
-            <span className="text-[#c9a961]">{"//"}</span> {t.features.eyebrow}
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-frc-muted">
+            <span className="text-frc-bronze">{"//"}</span> {t.features.eyebrow}
           </p>
           {/* Heading */}
           <h2 className="font-display mb-4 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
             <span className="text-[#2f4858]">{t.features.heading1}</span>
-            <span className="text-[#c9a961]">{t.features.heading2}</span>
+            <span className="text-frc-bronze">{t.features.heading2}</span>
           </h2>
 
           {/* Subtitle */}
-          <p className="max-w-2xl text-base sm:text-lg font-normal text-[#6b8393] leading-relaxed">
+          <p className="max-w-2xl text-base sm:text-lg font-normal text-frc-muted leading-relaxed">
             {t.features.subtitle}
           </p>
         </div>

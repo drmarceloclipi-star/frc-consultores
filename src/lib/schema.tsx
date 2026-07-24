@@ -1,4 +1,4 @@
-const BASE_URL = "https://frcconsultores.web.app"
+import { BASE_URL } from "./seo"
 
 export const organizationSchema = {
   "@context": "https://schema.org",

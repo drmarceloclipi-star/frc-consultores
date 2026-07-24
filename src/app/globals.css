@@ -39,6 +39,11 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-frc-ink: #22333f;
+  --color-frc-slate: #2f4858;
+  --color-frc-muted: #536b79;
+  --color-frc-bronze: #80691f;
+  --color-frc-gold: #c9a961;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -142,40 +147,13 @@
   letter-spacing: -0.02em;
 }
 
-/* Hero load sequence */
-@keyframes frc-rise {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes frc-draw {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-
 .frc-rise {
-  opacity: 0;
-  animation: frc-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 1;
 }
-.frc-rise-1 { animation-delay: 0.05s; }
-.frc-rise-2 { animation-delay: 0.18s; }
-.frc-rise-3 { animation-delay: 0.32s; }
-.frc-rise-4 { animation-delay: 0.46s; }
 
 .frc-rule {
   transform-origin: left center;
-  transform: scaleX(0);
-  animation: frc-draw 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+  transform: scaleX(1);
 }
 
 /* Ambient grid drift in hero */

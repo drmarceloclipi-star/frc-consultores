@@ -1,21 +1,13 @@
-"use client"
-
-import { useState } from "react"
 import Link from "next/link"
-import { ContactFormModal } from "./ContactFormModal"
 import { getTranslations, type Locale } from "@/lib/translations"
+import { ContactTrigger } from "./ContactTrigger"
 
 interface CTASectionProps {
   locale?: Locale
 }
 
 const CTASection = ({ locale = "en" }: CTASectionProps) => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
   const t = getTranslations(locale)
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false)
-  }
 
   return (
     <section className="frc-glow relative w-full min-h-[500px] flex items-center justify-center px-6 sm:px-6 py-[120px] md:py-[120px] lg:py-[120px] overflow-hidden">
@@ -39,24 +31,22 @@ const CTASection = ({ locale = "en" }: CTASectionProps) => {
         {/* Buttons Container */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center w-full sm:w-auto">
           {/* Primary Button */}
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="inline-block px-8 py-3 sm:py-4 bg-[#c9a961] text-[#2f4858] font-semibold text-base rounded-lg transition-colors duration-200 hover:bg-[#b39550] active:bg-[#a0845a] whitespace-nowrap cursor-pointer"
+          <ContactTrigger
+            locale={locale}
+            className="inline-block px-8 py-3 sm:py-4 bg-frc-gold text-frc-ink font-semibold text-base rounded-lg transition-colors duration-200 hover:bg-[#d3b674] active:bg-[#c3a058] whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-frc-ink"
           >
             {t.cta.startConversation}
-          </button>
+          </ContactTrigger>
 
           {/* Secondary Button */}
           <Link
             href={`/${locale}/about`}
-            className="inline-block px-8 py-3 sm:py-4 border border-[#c9a961] text-[#c9a961] font-semibold text-base rounded-lg transition-all duration-200 hover:bg-[#c9a961]/10 active:bg-[#c9a961]/20 whitespace-nowrap"
+            className="inline-block px-8 py-3 sm:py-4 border border-[#d3b674] text-[#d3b674] font-semibold text-base rounded-lg transition-all duration-200 hover:bg-[#d3b674]/10 active:bg-[#d3b674]/20 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-frc-ink"
           >
             {t.cta.exploreAcademy}
           </Link>
         </div>
       </div>
-
-      <ContactFormModal isOpen={isModalOpen} onClose={handleCloseModal} locale={locale} />
     </section>
   )
 }

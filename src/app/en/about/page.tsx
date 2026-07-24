@@ -53,10 +53,10 @@ export default function About() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-20 flex flex-col items-center text-center">
               <h1 className="font-display mb-6 text-4xl font-semibold text-[#2f4858] md:text-5xl">
-                About <span className="text-[#c9a961]">FRC Consultores</span>
+                About <span className="text-frc-bronze">FRC Consultores</span>
               </h1>
 
-              <p className="mx-auto max-w-2xl text-base font-normal text-[#6b8393] leading-relaxed md:text-lg">
+              <p className="mx-auto max-w-2xl text-base font-normal text-frc-muted leading-relaxed md:text-lg">
                 FRC Consultores Associados LTDA is a Brazilian company founded in 2015
                 in Recife, Brazil, with roots in consulting and engineering. In 2026 it
                 expanded its corporate purpose into software development and licensing,
@@ -72,13 +72,13 @@ export default function About() {
                   key={activity.code}
                   className="frc-card bg-white border border-gray-200 rounded-lg p-8 overflow-hidden"
                 >
-                  <p className="mb-2 font-mono text-xs tracking-wider text-[#a8873e]">
+                  <p className="mb-2 font-mono text-xs tracking-wider text-frc-bronze">
                     CNAE {activity.code}
                   </p>
-                  <h3 className="mb-3 text-xl font-bold text-[#2f4858]">
+                  <h2 className="mb-3 text-xl font-bold text-[#2f4858]">
                     {activity.title}
-                  </h3>
-                  <p className="text-sm text-[#6b8393] leading-relaxed">
+                  </h2>
+                  <p className="text-sm text-frc-muted leading-relaxed">
                     {activity.description}
                   </p>
                 </div>
@@ -88,24 +88,24 @@ export default function About() {
             {/* Where we are */}
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
               <div className="rounded-lg border border-gray-200 bg-white p-8">
-                <p className="mb-2 font-mono text-xs tracking-wider text-[#a8873e]">
+                <p className="mb-2 font-mono text-xs tracking-wider text-frc-bronze">
                   JOINVILLE · BRAZIL
                 </p>
-                <h3 className="mb-3 text-xl font-bold text-[#2f4858]">Development</h3>
-                <p className="text-sm text-[#6b8393] leading-relaxed">
+                <h2 className="mb-3 text-xl font-bold text-[#2f4858]">Development</h2>
+                <p className="text-sm text-frc-muted leading-relaxed">
                   The software operation is led by partner Marcelo Hugo Resende
                   Tiburtius Cavalcanti, who lives and works in Joinville, Brazil,
                   heading software development, mobile apps and IT consulting.
                 </p>
               </div>
               <div className="rounded-lg border border-gray-200 bg-white p-8">
-                <p className="mb-2 font-mono text-xs tracking-wider text-[#a8873e]">
+                <p className="mb-2 font-mono text-xs tracking-wider text-frc-bronze">
                   RECIFE · BRAZIL
                 </p>
-                <h3 className="mb-3 text-xl font-bold text-[#2f4858]">
+                <h2 className="mb-3 text-xl font-bold text-[#2f4858]">
                   Headquarters and Administration
-                </h3>
-                <p className="text-sm text-[#6b8393] leading-relaxed">
+                </h2>
+                <p className="text-sm text-frc-muted leading-relaxed">
                   The registered office and company administration are in Recife,
                   Brazil, under managing partner Maria de Fátima Resende Cavalcanti.
                 </p>
@@ -118,32 +118,35 @@ export default function About() {
               <dl className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 text-sm">
                 <div>
                   <dt className="font-semibold text-[#2f4858]">Legal Name</dt>
-                  <dd className="text-[#6b8393]">FRC Consultores Associados LTDA</dd>
+                  <dd className="text-frc-muted">FRC Consultores Associados LTDA</dd>
                 </div>
                 <div>
                   <dt className="font-semibold text-[#2f4858]">Tax ID (CNPJ)</dt>
-                  <dd className="text-[#6b8393]">22.052.463/0001-30</dd>
+                  <dd className="text-frc-muted">22.052.463/0001-30</dd>
                 </div>
                 <div>
                   <dt className="font-semibold text-[#2f4858]">Founded</dt>
-                  <dd className="text-[#6b8393]">March 16, 2015</dd>
+                  <dd className="text-frc-muted">March 16, 2015</dd>
                 </div>
                 <div>
                   <dt className="font-semibold text-[#2f4858]">Software Division</dt>
-                  <dd className="text-[#6b8393]">since July 2026</dd>
+                  <dd className="text-frc-muted">since July 2026</dd>
                 </div>
                 <div>
                   <dt className="font-semibold text-[#2f4858]">Headquarters</dt>
-                  <dd className="text-[#6b8393]">Recife, Pernambuco, Brazil</dd>
+                  <dd className="text-frc-muted">Recife, Pernambuco, Brazil</dd>
                 </div>
                 <div>
                   <dt className="font-semibold text-[#2f4858]">Development</dt>
-                  <dd className="text-[#6b8393]">Joinville, Santa Catarina, Brazil</dd>
+                  <dd className="text-frc-muted">Joinville, Santa Catarina, Brazil</dd>
                 </div>
               </dl>
-              <p className="mt-6 text-sm text-[#6b8393]">
+              <p className="mt-6 text-sm text-frc-muted">
                 Full registration details on the{" "}
-                <Link href="/en/impressum" className="text-[#c9a961] hover:underline">
+                <Link
+                  href="/en/impressum"
+                  className="font-medium text-frc-bronze underline decoration-1 underline-offset-4 hover:text-frc-ink"
+                >
                   Legal Notice
                 </Link>{" "}
                 page.
@@ -163,14 +166,14 @@ export default function About() {
             </p>
             <Link
               href="/en/impressum"
-              className="inline-block bg-[#c9a961] text-[#2f4858] px-8 py-3 rounded font-semibold hover:bg-[#b0925a] transition"
+              className="inline-block bg-frc-gold text-frc-ink px-8 py-3 rounded font-semibold hover:bg-[#d3b674] transition"
             >
               Contact Channels
             </Link>
           </div>
         </section>
       </main>
-      <Footer locale="en" />
+      <Footer locale="en" path="/about" />
     </div>
   )
 }
