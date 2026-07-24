@@ -4,15 +4,19 @@
 
 ## Páginas principais (Português)
 
-- [Início](https://frcconsultores.web.app/pt): Visão geral dos serviços — desenvolvimento de software, consultoria em TI, hospedagem e dados.
-- [Sobre](https://frcconsultores.web.app/pt/about): História da empresa, atividades registradas e forma de trabalhar.
-- [Dados Legais / Contato](https://frcconsultores.web.app/pt/impressum): Dados legais e de contato da empresa.
+- [Início](https://frcconsultores.com.br/pt): Visão geral dos serviços — desenvolvimento de software, consultoria em TI, hospedagem e dados.
+- [Serviços](https://frcconsultores.com.br/pt/services): Escopo de desenvolvimento, aplicativos, consultoria, operação e forma de trabalhar.
+- [Cases](https://frcconsultores.com.br/pt/cases): Projetos públicos — Levanta Mão, Jourmingo, Entrela e Medário.
+- [Sobre](https://frcconsultores.com.br/pt/about): História da empresa, atividades registradas e forma de trabalhar.
+- [Dados Legais / Contato](https://frcconsultores.com.br/pt/impressum): Dados legais e de contato da empresa.
 
 ## Main pages (English)
 
-- [Home](https://frcconsultores.web.app/en): Overview of services — software development, IT consulting, hosting and data.
-- [About](https://frcconsultores.web.app/en/about): Company history, registered activities and working model.
-- [Legal Data / Contact](https://frcconsultores.web.app/en/impressum): Legal and contact information.
+- [Home](https://frcconsultores.com.br/en): Overview of services — software development, IT consulting, hosting and data.
+- [Services](https://frcconsultores.com.br/en/services): Development, apps, consulting, operations and delivery process.
+- [Case Studies](https://frcconsultores.com.br/en/cases): Public projects — Levanta Mão, Jourmingo, Entrela and Medário.
+- [About](https://frcconsultores.com.br/en/about): Company history, registered activities and working model.
+- [Legal Data / Contact](https://frcconsultores.com.br/en/impressum): Legal and contact information.
 
 ## Dados da empresa
 

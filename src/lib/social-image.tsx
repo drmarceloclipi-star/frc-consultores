@@ -1,10 +1,23 @@
 import { ImageResponse } from "next/og"
 
-export const alt = "FRC Consultores — Desenvolvimento de Software Sob Medida"
-export const size = { width: 1200, height: 630 }
-export const contentType = "image/png"
+export const socialImageSize = { width: 1200, height: 630 }
+export const socialImageContentType = "image/png"
 
-export default function OpenGraphImage() {
+export function createSocialImage(locale: "pt" | "en") {
+  const content =
+    locale === "pt"
+      ? {
+          eyebrow: "// SOFTWARE SOB MEDIDA",
+          services:
+            "Desenvolvimento de software · Consultoria em TI · Hospedagem e dados",
+          locations: "Recife · Joinville · desde 2015",
+        }
+      : {
+          eyebrow: "// CUSTOM SOFTWARE",
+          services: "Software development · IT consulting · Hosting and data",
+          locations: "Recife · Joinville · since 2015",
+        }
+
   return new ImageResponse(
     (
       <div
@@ -29,7 +42,7 @@ export default function OpenGraphImage() {
             marginBottom: 32,
           }}
         >
-          {"// SOFTWARE SOB MEDIDA"}
+          {content.eyebrow}
         </div>
         <div
           style={{
@@ -53,7 +66,7 @@ export default function OpenGraphImage() {
           }}
         />
         <div style={{ display: "flex", fontSize: 32, color: "#9db2bf" }}>
-          Desenvolvimento de software · Consultoria em TI · Hospedagem e dados
+          {content.services}
         </div>
         <div
           style={{
@@ -63,10 +76,10 @@ export default function OpenGraphImage() {
             marginTop: 48,
           }}
         >
-          Recife · Joinville · desde 2015
+          {content.locations}
         </div>
       </div>
     ),
-    size
+    socialImageSize
   )
 }

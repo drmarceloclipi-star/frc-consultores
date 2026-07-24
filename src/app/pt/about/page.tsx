@@ -53,10 +53,10 @@ export default function About() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-20 flex flex-col items-center text-center">
               <h1 className="font-display mb-6 text-4xl font-semibold text-[#2f4858] md:text-5xl">
-                Sobre a <span className="text-[#c9a961]">FRC Consultores</span>
+                Sobre a <span className="text-frc-bronze">FRC Consultores</span>
               </h1>
 
-              <p className="mx-auto max-w-2xl text-base font-normal text-[#6b8393] leading-relaxed md:text-lg">
+              <p className="mx-auto max-w-2xl text-base font-normal text-frc-muted leading-relaxed md:text-lg">
                 A FRC Consultores Associados LTDA é uma empresa brasileira fundada em
                 2015, em Recife-PE, com origem em consultoria e engenharia. Em 2026,
                 expandiu seu objeto social para o desenvolvimento e licenciamento de
@@ -73,13 +73,13 @@ export default function About() {
                   key={activity.code}
                   className="frc-card bg-white border border-gray-200 rounded-lg p-8 overflow-hidden"
                 >
-                  <p className="mb-2 font-mono text-xs tracking-wider text-[#a8873e]">
+                  <p className="mb-2 font-mono text-xs tracking-wider text-frc-bronze">
                     CNAE {activity.code}
                   </p>
-                  <h3 className="mb-3 text-xl font-bold text-[#2f4858]">
+                  <h2 className="mb-3 text-xl font-bold text-[#2f4858]">
                     {activity.title}
-                  </h3>
-                  <p className="text-sm text-[#6b8393] leading-relaxed">
+                  </h2>
+                  <p className="text-sm text-frc-muted leading-relaxed">
                     {activity.description}
                   </p>
                 </div>
@@ -89,13 +89,13 @@ export default function About() {
             {/* Where we are */}
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
               <div className="rounded-lg border border-gray-200 bg-white p-8">
-                <p className="mb-2 font-mono text-xs tracking-wider text-[#a8873e]">
+                <p className="mb-2 font-mono text-xs tracking-wider text-frc-bronze">
                   JOINVILLE · SC
                 </p>
-                <h3 className="mb-3 text-xl font-bold text-[#2f4858]">
+                <h2 className="mb-3 text-xl font-bold text-[#2f4858]">
                   Desenvolvimento
-                </h3>
-                <p className="text-sm text-[#6b8393] leading-relaxed">
+                </h2>
+                <p className="text-sm text-frc-muted leading-relaxed">
                   A operação de software é liderada pelo sócio Marcelo Hugo Resende
                   Tiburtius Cavalcanti, que vive e trabalha em Joinville-SC: é dele a
                   condução do desenvolvimento de software, aplicativos móveis e
@@ -103,13 +103,13 @@ export default function About() {
                 </p>
               </div>
               <div className="rounded-lg border border-gray-200 bg-white p-8">
-                <p className="mb-2 font-mono text-xs tracking-wider text-[#a8873e]">
+                <p className="mb-2 font-mono text-xs tracking-wider text-frc-bronze">
                   RECIFE · PE
                 </p>
-                <h3 className="mb-3 text-xl font-bold text-[#2f4858]">
+                <h2 className="mb-3 text-xl font-bold text-[#2f4858]">
                   Sede e Administração
-                </h3>
-                <p className="text-sm text-[#6b8393] leading-relaxed">
+                </h2>
+                <p className="text-sm text-frc-muted leading-relaxed">
                   A sede legal e a administração da sociedade ficam em Recife-PE, sob
                   responsabilidade da sócia-administradora Maria de Fátima Resende
                   Cavalcanti.
@@ -123,32 +123,35 @@ export default function About() {
               <dl className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 text-sm">
                 <div>
                   <dt className="font-semibold text-[#2f4858]">Razão Social</dt>
-                  <dd className="text-[#6b8393]">FRC Consultores Associados LTDA</dd>
+                  <dd className="text-frc-muted">FRC Consultores Associados LTDA</dd>
                 </div>
                 <div>
                   <dt className="font-semibold text-[#2f4858]">CNPJ</dt>
-                  <dd className="text-[#6b8393]">22.052.463/0001-30</dd>
+                  <dd className="text-frc-muted">22.052.463/0001-30</dd>
                 </div>
                 <div>
                   <dt className="font-semibold text-[#2f4858]">Fundação</dt>
-                  <dd className="text-[#6b8393]">16 de março de 2015</dd>
+                  <dd className="text-frc-muted">16 de março de 2015</dd>
                 </div>
                 <div>
                   <dt className="font-semibold text-[#2f4858]">Divisão de Software</dt>
-                  <dd className="text-[#6b8393]">desde julho de 2026</dd>
+                  <dd className="text-frc-muted">desde julho de 2026</dd>
                 </div>
                 <div>
                   <dt className="font-semibold text-[#2f4858]">Sede</dt>
-                  <dd className="text-[#6b8393]">Recife, Pernambuco, Brasil</dd>
+                  <dd className="text-frc-muted">Recife, Pernambuco, Brasil</dd>
                 </div>
                 <div>
                   <dt className="font-semibold text-[#2f4858]">Desenvolvimento</dt>
-                  <dd className="text-[#6b8393]">Joinville, Santa Catarina, Brasil</dd>
+                  <dd className="text-frc-muted">Joinville, Santa Catarina, Brasil</dd>
                 </div>
               </dl>
-              <p className="mt-6 text-sm text-[#6b8393]">
+              <p className="mt-6 text-sm text-frc-muted">
                 Dados cadastrais completos na página de{" "}
-                <Link href="/pt/impressum" className="text-[#c9a961] hover:underline">
+                <Link
+                  href="/pt/impressum"
+                  className="font-medium text-frc-bronze underline decoration-1 underline-offset-4 hover:text-frc-ink"
+                >
                   Dados Legais
                 </Link>
                 .
@@ -168,14 +171,14 @@ export default function About() {
             </p>
             <Link
               href="/pt/impressum"
-              className="inline-block bg-[#c9a961] text-[#2f4858] px-8 py-3 rounded font-semibold hover:bg-[#b0925a] transition"
+              className="inline-block bg-frc-gold text-frc-ink px-8 py-3 rounded font-semibold hover:bg-[#d3b674] transition"
             >
               Canais de Contato
             </Link>
           </div>
         </section>
       </main>
-      <Footer locale="pt" />
+      <Footer locale="pt" path="/about" />
     </div>
   )
 }

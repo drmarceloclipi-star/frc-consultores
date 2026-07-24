@@ -1,5 +1,3 @@
-"use client"
-
 import { getTranslations, type Locale } from "@/lib/translations"
 import { TechGrid } from "./TechGrid"
 
@@ -12,13 +10,13 @@ interface StatItem {
 function ComparisonStat({ stat }: { stat: StatItem }) {
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="mb-3 font-mono text-4xl font-semibold tracking-tight text-[#c9a961] [font-variant-numeric:tabular-nums] md:text-5xl">
+      <div className="mb-3 font-mono text-4xl font-semibold tracking-tight text-frc-bronze [font-variant-numeric:tabular-nums] md:text-5xl">
         {stat.number}
       </div>
-      <p className="mb-2 text-sm font-normal text-[#6b8393] md:text-base">
+      <p className="mb-2 text-sm font-normal text-frc-muted md:text-base">
         {stat.description}
       </p>
-      <p className="text-xs font-normal text-[#6b8393] md:text-sm">
+      <p className="text-xs font-normal text-frc-muted md:text-sm">
         {stat.citation}
       </p>
     </div>
@@ -44,8 +42,8 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 flex flex-col items-center text-center md:mb-20 lg:mb-24">
-          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#6b8393]">
-            <span className="text-[#c9a961]">{"//"}</span> {t.comparison.eyebrow}
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-frc-muted">
+            <span className="text-frc-bronze">{"//"}</span> {t.comparison.eyebrow}
           </p>
           {/* Main Heading */}
           <h2 className="font-display mb-6 text-4xl font-semibold leading-tight text-[#2f4858] md:text-5xl">
@@ -53,7 +51,7 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
           </h2>
 
           {/* Subheading */}
-          <p className="mx-auto max-w-2xl text-base font-normal text-[#6b8393] leading-relaxed md:text-lg">
+          <p className="mx-auto max-w-2xl text-base font-normal text-frc-muted leading-relaxed md:text-lg">
             {t.comparison.intro}
           </p>
         </div>
@@ -71,10 +69,10 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
               <div className="space-y-4">
                 {oldGenItems.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <span className="mt-1 flex-shrink-0 text-lg text-[#6b8393]">
+                    <span className="mt-1 flex-shrink-0 text-lg text-frc-muted">
                       →
                     </span>
-                    <p className="text-base font-normal text-[#6b8393] leading-relaxed">
+                    <p className="text-base font-normal text-frc-muted leading-relaxed">
                       {item}
                     </p>
                   </div>
@@ -92,12 +90,12 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
             </div>
 
             {/* New Generation Column */}
-            <div className="flex flex-col border-l-4 border-l-[#c9a961] pl-6 lg:pl-8">
+            <div className="flex flex-col border-l border-l-frc-bronze pl-6 lg:pl-8">
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-[#2f4858] lg:text-3xl">
                   {t.comparison.newGeneration}
                 </h3>
-                <p className="text-sm font-normal text-[#c9a961] lg:text-base">
+                <p className="text-sm font-normal text-frc-bronze lg:text-base">
                   {t.comparison.agentic}
                 </p>
               </div>
@@ -105,10 +103,10 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
               <div className="space-y-4">
                 {newGenItems.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <span className="mt-1 flex-shrink-0 text-lg text-[#c9a961]">
+                    <span className="mt-1 flex-shrink-0 text-lg text-frc-bronze">
                       ✓
                     </span>
-                    <p className="text-base font-normal text-[#6b8393] leading-relaxed">
+                    <p className="text-base font-normal text-frc-muted leading-relaxed">
                       {item}
                     </p>
                   </div>
@@ -127,10 +125,10 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
               <div className="space-y-3">
                 {oldGenItems.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <span className="mt-1 flex-shrink-0 text-lg text-[#6b8393]">
+                    <span className="mt-1 flex-shrink-0 text-lg text-frc-muted">
                       →
                     </span>
-                    <p className="text-base font-normal text-[#6b8393] leading-relaxed">
+                    <p className="text-base font-normal text-frc-muted leading-relaxed">
                       {item}
                     </p>
                   </div>
@@ -146,12 +144,12 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
             </div>
 
             {/* New Generation */}
-            <div className="flex flex-col border-l-4 border-l-[#c9a961] pl-4">
+            <div className="flex flex-col border-l border-l-frc-bronze pl-4">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-[#2f4858]">
                   {t.comparison.newGeneration}
                 </h3>
-                <p className="text-sm font-normal text-[#c9a961]">
+                <p className="text-sm font-normal text-frc-bronze">
                   {t.comparison.agentic}
                 </p>
               </div>
@@ -159,10 +157,10 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
               <div className="space-y-3">
                 {newGenItems.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <span className="mt-1 flex-shrink-0 text-lg text-[#c9a961]">
+                    <span className="mt-1 flex-shrink-0 text-lg text-frc-bronze">
                       ✓
                     </span>
-                    <p className="text-base font-normal text-[#6b8393] leading-relaxed">
+                    <p className="text-base font-normal text-frc-muted leading-relaxed">
                       {item}
                     </p>
                   </div>
@@ -180,7 +178,7 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
           </h3>
 
           {/* Intro Text */}
-          <p className="mx-auto mb-12 max-w-2xl text-center text-sm font-normal text-[#6b8393] leading-relaxed md:mb-16 md:text-base">
+          <p className="mx-auto mb-12 max-w-2xl text-center text-sm font-normal text-frc-muted leading-relaxed md:mb-16 md:text-base">
             {t.comparison.breakthroughText}
           </p>
 

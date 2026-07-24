@@ -60,7 +60,7 @@ const HeroSection = ({ locale = "en" }: HeroSectionProps) => {
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-8 items-center">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             {/* Subtitle */}
-            <p className="frc-rise frc-rise-1 mb-6 font-mono text-xs sm:text-sm uppercase tracking-[0.2em] text-[#6b8393]">
+            <p className="frc-rise frc-rise-1 mb-6 font-mono text-xs sm:text-sm uppercase tracking-[0.2em] text-frc-muted">
               {t.hero.subtitle}
             </p>
 
@@ -68,14 +68,14 @@ const HeroSection = ({ locale = "en" }: HeroSectionProps) => {
             {/* No entrance animation: this is the LCP element */}
             <h1 className="font-display mb-4 text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05]">
               <span className="text-[#22333f]">{t.hero.titlePart1}</span>{" "}
-              <span className="text-[#c9a961]">{t.hero.titlePart2}</span>
+              <span className="text-frc-bronze">{t.hero.titlePart2}</span>
             </h1>
 
             {/* Gold rule */}
             <div className="frc-rule mb-8 h-[3px] w-24 rounded-full bg-gradient-to-r from-[#c9a961] to-[#a8873e]" aria-hidden />
 
             {/* Body Text */}
-            <p className="frc-rise frc-rise-3 mb-10 max-w-xl text-base md:text-lg font-normal text-[#6b8393] leading-relaxed">
+            <p className="frc-rise frc-rise-3 mb-10 max-w-xl text-base md:text-lg font-normal text-frc-muted leading-relaxed">
               {t.hero.description}
             </p>
 
@@ -83,13 +83,13 @@ const HeroSection = ({ locale = "en" }: HeroSectionProps) => {
             <div className="frc-rise frc-rise-4 flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center lg:justify-start items-center">
               <Link
                 href="#comparison"
-                className="text-[#c9a961] font-medium text-base hover:text-[#a8873e] transition-colors duration-200"
+                className="text-frc-bronze font-medium text-base underline decoration-1 underline-offset-4 hover:text-frc-ink transition-colors duration-200"
               >
                 {t.hero.seeDifference}
               </Link>
               <Link
                 href="#solutions"
-                className="text-[#c9a961] font-medium text-base hover:text-[#a8873e] transition-colors duration-200"
+                className="text-frc-bronze font-medium text-base underline decoration-1 underline-offset-4 hover:text-frc-ink transition-colors duration-200"
               >
                 {t.hero.viewExamples}
               </Link>
@@ -111,10 +111,10 @@ const HeroSection = ({ locale = "en" }: HeroSectionProps) => {
               {registry.map((item) => (
                 <span
                   key={`${copy}-${item}`}
-                  className="mx-6 font-mono text-xs tracking-wide text-[#2f4858]/70"
+                  className="mx-6 font-mono text-xs tracking-wide text-frc-muted"
                 >
                   {item}
-                  <span className="ml-12 text-[#c9a961]">✦</span>
+                  <span className="ml-12 text-frc-bronze">✦</span>
                 </span>
               ))}
             </div>

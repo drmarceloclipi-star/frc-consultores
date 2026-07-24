@@ -3,8 +3,12 @@ export const ptTranslations = {
   header: {
     whyNow: "Início",
     solutions: "Serviços",
+    cases: "Cases",
     about: "Sobre Nós",
     contact: "Contato",
+    navigationLabel: "Navegação principal",
+    openMenuLabel: "Abrir menu de navegação",
+    closeMenuLabel: "Fechar menu de navegação",
   },
   // Hero Section
   hero: {
@@ -158,6 +162,7 @@ export const ptTranslations = {
   contactForm: {
     heading: "Vamos Conversar",
     description: "Conte-nos sobre suas necessidades e entraremos em contato em breve.",
+    closeLabel: "Fechar formulário de contato",
     nameLabel: "Nome",
     namePlaceholder: "Seu nome",
     emailLabel: "Email",

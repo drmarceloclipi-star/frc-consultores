@@ -4,7 +4,6 @@ import { ComparisonSection } from "@/components/ComparisonSection"
 import { FeaturesSection } from "@/components/FeaturesSection"
 import { CTASection } from "@/components/CTASection"
 import { Footer } from "@/components/Footer"
-import { Reveal } from "@/components/Reveal"
 import type { Metadata } from "next"
 import { pageMetadata } from "@/lib/seo"
 
@@ -21,15 +20,9 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         <HeroSection locale="en" />
-        <Reveal>
-          <SolutionsSection locale="en" />
-        </Reveal>
-        <Reveal>
-          <ComparisonSection locale="en" />
-        </Reveal>
-        <Reveal>
-          <FeaturesSection locale="en" />
-        </Reveal>
+        <SolutionsSection locale="en" />
+        <ComparisonSection locale="en" />
+        <FeaturesSection locale="en" />
         <CTASection locale="en" />
       </main>
       <Footer locale="en" />

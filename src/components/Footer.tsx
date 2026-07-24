@@ -4,9 +4,10 @@ import { getTranslations, type Locale } from "@/lib/translations"
 
 interface FooterProps {
   locale?: Locale
+  path?: "" | "/about" | "/cases" | "/impressum" | "/services"
 }
 
-export function Footer({ locale = "en" }: FooterProps) {
+export function Footer({ locale = "en", path = "" }: FooterProps) {
   const t = getTranslations(locale)
   return (
     <footer className="w-full border-t border-gray-200 bg-white">
@@ -19,8 +20,22 @@ export function Footer({ locale = "en" }: FooterProps) {
           </p>
         </div>
 
-        {/* Right Section: Imprint Link & Language Selector */}
+        {/* Right Section: Site links & Language Selector */}
         <div className="flex flex-wrap items-center justify-center gap-4 md:flex-shrink-0 md:gap-8">
+          <Link
+            href={`/${locale}/services`}
+            className="text-sm font-normal text-gray-600 hover:text-gray-900 transition-colors duration-200"
+          >
+            {t.header.solutions}
+          </Link>
+
+          <Link
+            href={`/${locale}/cases`}
+            className="text-sm font-normal text-gray-600 hover:text-gray-900 transition-colors duration-200"
+          >
+            {t.header.cases}
+          </Link>
+
           {/* Imprint Link */}
           <Link
             href={`/${locale}/impressum`}
@@ -34,7 +49,7 @@ export function Footer({ locale = "en" }: FooterProps) {
             <Globe className="w-4 h-5 flex-shrink-0 text-gray-600" />
             <div className="flex gap-3 text-sm font-normal">
               <Link
-                href="/en"
+                href={`/en${path}`}
                 className={`transition-colors duration-200 ${
                   locale === "en"
                     ? "text-gray-900 font-semibold"
@@ -45,7 +60,7 @@ export function Footer({ locale = "en" }: FooterProps) {
               </Link>
               <span className="text-gray-300">•</span>
               <Link
-                href="/pt"
+                href={`/pt${path}`}
                 className={`transition-colors duration-200 ${
                   locale === "pt"
                     ? "text-gray-900 font-semibold"
