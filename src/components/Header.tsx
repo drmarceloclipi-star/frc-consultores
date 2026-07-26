@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { getTranslations, type Locale } from "@/lib/translations"
 import { ContactTrigger } from "./ContactTrigger"
@@ -21,10 +22,19 @@ export function Header({ locale = "en" }: HeaderProps) {
     <header className="sticky top-0 z-50 w-full h-16 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="mx-auto max-w-6xl h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link href={`/${locale}`} className="flex items-center flex-shrink-0 mr-auto">
-          <span className="text-lg md:text-xl font-bold text-[#2f4858]">
-            FRC
-          </span>
+        <Link
+          href={`/${locale}`}
+          className="flex items-center flex-shrink-0 mr-auto"
+          aria-label="FRC"
+        >
+          <Image
+            src="/images/brand/frc-logo.png"
+            alt="FRC"
+            width={96}
+            height={32}
+            className="h-7 w-auto sm:h-8"
+            fetchPriority="high"
+          />
         </Link>
 
         {/* Desktop Navigation */}
