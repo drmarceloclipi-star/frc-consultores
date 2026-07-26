@@ -12,7 +12,6 @@ const geistSans = Geist({
 const displaySerif = Source_Serif_4({
   variable: "--font-display-serif",
   subsets: ["latin"],
-  style: ["normal", "italic"],
   preload: false,
 })
 
