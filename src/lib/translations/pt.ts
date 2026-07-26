@@ -3,6 +3,7 @@ export const ptTranslations = {
   header: {
     whyNow: "Início",
     solutions: "Serviços",
+    apps: "Apps",
     cases: "Cases",
     about: "Sobre Nós",
     contact: "Contato",
@@ -16,7 +17,7 @@ export const ptTranslations = {
     titlePart1: "Software Sob Medida",
     titlePart2: "para o Seu Negócio",
     description:
-      "A FRC Consultores Associados desenvolve e licencia programas de computador, aplicativos móveis e sistemas web — com consultoria em tecnologia da informação e serviços de hospedagem de ponta a ponta.",
+      "A FRC desenvolve e licencia programas de computador, aplicativos móveis e sistemas web — com consultoria em tecnologia da informação e serviços de hospedagem de ponta a ponta.",
     seeDifference: "Por Que Sob Medida?",
     viewExamples: "Nossos Serviços",
   },
@@ -171,6 +172,8 @@ export const ptTranslations = {
     companyPlaceholder: "Sua empresa",
     messageLabel: "Mensagem",
     messagePlaceholder: "Conte-nos sobre seu projeto...",
+    selectedProductLabel: "Pacote selecionado",
+    startingPriceLabel: "a partir de",
     setupCall: "Agendar uma chamada",
     requestMoreInfo: "Solicitar mais informações sobre:",
     training: "Desenvolvimento de Software",

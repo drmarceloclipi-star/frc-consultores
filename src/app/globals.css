@@ -142,8 +142,7 @@
 /* ---------- FRC premium layer ---------- */
 
 .font-display {
-  font-family: var(--font-fraunces), Georgia, serif;
-  font-optical-sizing: auto;
+  font-family: var(--font-display-serif), Georgia, serif;
   letter-spacing: -0.02em;
 }
 

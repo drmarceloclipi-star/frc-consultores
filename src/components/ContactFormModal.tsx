@@ -8,11 +8,21 @@ import { getTranslations, type Locale } from "@/lib/translations"
 interface ContactFormModalProps {
   isOpen: boolean
   onClose: () => void
+  product?: {
+    name: string
+    startingPrice: string
+  }
   solutionType?: string
   locale?: Locale
 }
 
-export function ContactFormModal({ isOpen, onClose, solutionType, locale = "en" }: ContactFormModalProps) {
+export function ContactFormModal({
+  isOpen,
+  onClose,
+  product,
+  solutionType,
+  locale = "en",
+}: ContactFormModalProps) {
   const t = getTranslations(locale)
   const id = useId()
   const dialogRef = useRef<HTMLDivElement>(null)
@@ -33,7 +43,11 @@ export function ContactFormModal({ isOpen, onClose, solutionType, locale = "en" 
     name: "",
     email: "",
     company: "",
-    message: "",
+    message: product
+      ? locale === "pt"
+        ? `Tenho interesse no pacote ${product.name}, a partir de ${product.startingPrice}.`
+        : `I am interested in the ${product.name} package, starting at ${product.startingPrice}.`
+      : "",
   })
 
   const [selectedOptions, setSelectedOptions] = useState({
@@ -94,12 +108,14 @@ export function ContactFormModal({ isOpen, onClose, solutionType, locale = "en" 
     ].filter(Boolean)
     const subject =
       locale === "pt"
-        ? `Contato pelo site — ${formData.name}`
-        : `Website contact — ${formData.name}`
+        ? `Diagnóstico de app — ${product?.name ?? formData.name}`
+        : `App diagnosis — ${product?.name ?? formData.name}`
     const bodyLines = [
       `${t.contactForm.nameLabel}: ${formData.name}`,
       `${t.contactForm.emailLabel}: ${formData.email}`,
       formData.company && `${t.contactForm.companyLabel}: ${formData.company}`,
+      product &&
+        `${t.contactForm.selectedProductLabel}: ${product.name} (${t.contactForm.startingPriceLabel} ${product.startingPrice})`,
       interests.length > 0 && `${t.contactForm.requestMoreInfo} ${interests.join(", ")}`,
       "",
       formData.message,

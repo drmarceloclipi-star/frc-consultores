@@ -1,11 +1,12 @@
-# FRC Consultores Associados
+# FRC
 
-> FRC Consultores Associados LTDA (CNPJ 22.052.463/0001-30) é uma empresa brasileira de desenvolvimento e licenciamento de software, com sede em Recife-PE e desenvolvimento em Joinville-SC, atuando desde 2015 (linha de software desde 2026). Oferece desenvolvimento de software sob medida e não-customizável, aplicativos móveis, sistemas web, consultoria em TI e hospedagem/tratamento de dados.
+> A FRC — razão social FRC Consultores Associados LTDA, CNPJ 22.052.463/0001-30 — é uma empresa brasileira de desenvolvimento e licenciamento de software, com sede em Recife-PE e desenvolvimento em Joinville-SC, atuando desde 2015 (linha de software desde 2026). Oferece desenvolvimento de software sob medida e não-customizável, aplicativos móveis, sistemas web, consultoria em TI e hospedagem/tratamento de dados.
 
 ## Páginas principais (Português)
 
 - [Início](https://frcconsultores.com.br/pt): Visão geral dos serviços — desenvolvimento de software, consultoria em TI, hospedagem e dados.
 - [Serviços](https://frcconsultores.com.br/pt/services): Escopo de desenvolvimento, aplicativos, consultoria, operação e forma de trabalhar.
+- [Apps iOS e Android](https://frcconsultores.com.br/pt/apps): Pacotes com preços iniciais para diagnóstico, MVP, publicação, modernização e evolução.
 - [Cases](https://frcconsultores.com.br/pt/cases): Projetos públicos — Levanta Mão, Jourmingo, Entrela e Medário.
 - [Sobre](https://frcconsultores.com.br/pt/about): História da empresa, atividades registradas e forma de trabalhar.
 - [Dados Legais / Contato](https://frcconsultores.com.br/pt/impressum): Dados legais e de contato da empresa.
@@ -14,6 +15,7 @@
 
 - [Home](https://frcconsultores.com.br/en): Overview of services — software development, IT consulting, hosting and data.
 - [Services](https://frcconsultores.com.br/en/services): Development, apps, consulting, operations and delivery process.
+- [iOS and Android Apps](https://frcconsultores.com.br/en/apps): Starting-price packages for diagnosis, MVP, publishing, modernization and ongoing care.
 - [Case Studies](https://frcconsultores.com.br/en/cases): Public projects — Levanta Mão, Jourmingo, Entrela and Medário.
 - [About](https://frcconsultores.com.br/en/about): Company history, registered activities and working model.
 - [Legal Data / Contact](https://frcconsultores.com.br/en/impressum): Legal and contact information.

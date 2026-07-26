@@ -4,7 +4,7 @@ import {
   socialImageSize,
 } from "@/lib/social-image"
 
-export const alt = "FRC Consultores — Custom Software Development"
+export const alt = "FRC — Custom Software Development"
 export const size = socialImageSize
 export const contentType = socialImageContentType
 

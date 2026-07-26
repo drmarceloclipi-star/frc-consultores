@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/cases",
   title: "Case Studies in Apps, AI and Digital Products",
   description:
-    "Explore public FRC Consultores projects: Levanta Mão, Jourmingo, Entrela and Medário.",
+    "Explore public FRC projects: Levanta Mão, Jourmingo, Entrela and Medário.",
 })
 
 const content = {

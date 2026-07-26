@@ -4,9 +4,9 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": `${BASE_URL}/#organization`,
-  name: "FRC Consultores Associados LTDA",
+  name: "FRC",
   legalName: "FRC Consultores Associados LTDA",
-  alternateName: "FRC Consultores",
+  alternateName: "FRC Consultores Associados",
   url: BASE_URL,
   description:
     "Desenvolvimento e licenciamento de programas de computador, aplicativos móveis, consultoria em TI e hospedagem de dados.",
@@ -43,7 +43,7 @@ export const websiteSchema = {
   "@type": "WebSite",
   "@id": `${BASE_URL}/#website`,
   url: BASE_URL,
-  name: "FRC Consultores Associados",
+  name: "FRC",
   publisher: { "@id": `${BASE_URL}/#organization` },
   inLanguage: ["pt-BR", "en"],
 }
@@ -69,11 +69,57 @@ export function contactPageSchema(locale: "pt" | "en") {
     "@id": `${BASE_URL}/${locale}/impressum#webpage`,
     url: `${BASE_URL}/${locale}/impressum`,
     name: isPt
-      ? "Dados Legais / Contato — FRC Consultores"
-      : "Legal Data / Contact — FRC Consultores",
+      ? "Dados Legais / Contato — FRC"
+      : "Legal Data / Contact — FRC",
     inLanguage: isPt ? "pt-BR" : "en",
     isPartOf: { "@id": `${BASE_URL}/#website` },
     mainEntity: { "@id": `${BASE_URL}/#organization` },
+  }
+}
+
+export function appProductCatalogSchema(
+  locale: "pt" | "en",
+  products: readonly {
+    id: string
+    name: string
+    summary: string
+    priceValue: number
+    recurring?: boolean
+  }[]
+) {
+  const isPt = locale === "pt"
+  return {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "@id": `${BASE_URL}/${locale}/apps#catalog`,
+    name: isPt
+      ? "Produtos para aplicativos iOS e Android"
+      : "iOS and Android app products",
+    url: `${BASE_URL}/${locale}/apps`,
+    itemListElement: products.map((product) => ({
+      "@type": "Offer",
+      url: `${BASE_URL}/${locale}/apps#${product.id}`,
+      priceCurrency: "BRL",
+      priceSpecification: {
+        "@type": product.recurring
+          ? "UnitPriceSpecification"
+          : "PriceSpecification",
+        minPrice: product.priceValue,
+        priceCurrency: "BRL",
+        ...(product.recurring
+          ? {
+              billingDuration: "P1M",
+            }
+          : {}),
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: product.name,
+        description: product.summary,
+        provider: { "@id": `${BASE_URL}/#organization` },
+        areaServed: "BR",
+      },
+    })),
   }
 }
 
@@ -81,7 +127,9 @@ export function JsonLd({ data }: { data: object }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+      }}
     />
   )
 }

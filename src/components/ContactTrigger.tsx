@@ -14,6 +14,10 @@ interface ContactTriggerProps {
   children: React.ReactNode
   className: string
   locale: Locale
+  product?: {
+    name: string
+    startingPrice: string
+  }
   solutionType?: string
 }
 
@@ -21,6 +25,7 @@ export function ContactTrigger({
   children,
   className,
   locale,
+  product,
   solutionType,
 }: ContactTriggerProps) {
   const [isOpen, setIsOpen] = useState(false)
@@ -38,6 +43,7 @@ export function ContactTrigger({
         <ContactFormModal
           isOpen
           locale={locale}
+          product={product}
           solutionType={solutionType}
           onClose={() => setIsOpen(false)}
         />
