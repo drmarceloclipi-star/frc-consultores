@@ -106,10 +106,13 @@ export function ContactFormModal({
       displayedOptions.consulting && t.contactForm.consulting,
       displayedOptions.implementation && t.contactForm.implementation,
     ].filter(Boolean)
-    const subject =
-      locale === "pt"
-        ? `Diagnóstico de app — ${product?.name ?? formData.name}`
-        : `App diagnosis — ${product?.name ?? formData.name}`
+    const subject = product
+      ? locale === "pt"
+        ? `Diagnóstico de app — ${product.name}`
+        : `App diagnosis — ${product.name}`
+      : locale === "pt"
+        ? `Contato pelo site — ${formData.name}`
+        : `Website contact — ${formData.name}`
     const bodyLines = [
       `${t.contactForm.nameLabel}: ${formData.name}`,
       `${t.contactForm.emailLabel}: ${formData.email}`,
