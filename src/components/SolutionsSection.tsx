@@ -37,11 +37,11 @@ export function SolutionsSection({ locale = "en" }: SolutionsSectionProps) {
     },
   ]
   return (
-    <section id="solutions" className="relative w-full bg-white py-20 md:py-32 lg:py-32">
+    <section id="solutions" className="relative w-full bg-white py-16 md:py-32">
       <TechGrid />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16 flex flex-col items-start md:mb-20 lg:mb-24">
+        <div className="mb-12 flex flex-col items-start md:mb-20 lg:mb-24">
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-frc-muted">
             <span className="text-frc-bronze">{"//"}</span> {t.solutions.eyebrow}
           </p>

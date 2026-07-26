@@ -49,9 +49,9 @@ export default function About() {
         ])}
       />
       <main className="flex-1">
-        <section className="w-full bg-white py-20 md:py-32">
+        <section className="w-full bg-white pb-16 pt-12 md:py-32">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-20 flex flex-col items-center text-center">
+            <div className="mb-12 flex flex-col items-center text-center md:mb-20">
               <h1 className="font-display mb-6 text-4xl font-semibold text-[#2f4858] md:text-5xl">
                 Sobre a <span className="text-frc-bronze">FRC</span>
               </h1>
@@ -87,7 +87,7 @@ export default function About() {
             </div>
 
             {/* Where we are */}
-            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="mt-12 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2">
               <div className="rounded-lg border border-gray-200 bg-white p-8">
                 <p className="mb-2 font-mono text-xs tracking-wider text-frc-bronze">
                   JOINVILLE · SC
@@ -118,7 +118,7 @@ export default function About() {
             </div>
 
             {/* Company facts */}
-            <div className="mt-16 rounded-lg border border-gray-200 bg-[#fafbfc] p-8">
+            <div className="mt-12 rounded-lg border border-gray-200 bg-[#fafbfc] p-8 md:mt-16">
               <h2 className="mb-6 text-2xl font-bold text-[#2f4858]">A Empresa</h2>
               <dl className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 text-sm">
                 <div>
@@ -161,7 +161,7 @@ export default function About() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full bg-[#3a4d5c] py-20 md:py-32">
+        <section className="w-full bg-[#3a4d5c] py-16 md:py-32">
           <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
               Vamos conversar sobre o seu projeto

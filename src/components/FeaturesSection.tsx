@@ -40,11 +40,11 @@ export function FeaturesSection({ locale = "en" }: FeaturesSectionProps) {
   const t = getTranslations(locale)
   const features = t.features.cards
   return (
-    <section className="relative w-full bg-white py-20 sm:py-24 lg:py-24">
+    <section className="relative w-full bg-white py-16 sm:py-24">
       <TechGrid />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-12 sm:mb-16 lg:mb-20">
+        <div className="mb-10 sm:mb-16 lg:mb-20">
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-frc-muted">
             <span className="text-frc-bronze">{"//"}</span> {t.features.eyebrow}
           </p>

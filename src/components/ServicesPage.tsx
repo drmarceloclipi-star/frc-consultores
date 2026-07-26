@@ -37,7 +37,7 @@ export function ServicesPage({ locale, content }: ServicesPageProps) {
     <div className="flex min-h-screen flex-col bg-white">
       <main className="flex-1">
         <section className="border-b border-gray-200 bg-[#f5f1e8]">
-          <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 md:grid-cols-[0.8fr_2.2fr] md:py-28 lg:px-8">
+          <div className="mx-auto grid max-w-6xl gap-10 px-4 pb-16 pt-12 sm:px-6 md:grid-cols-[0.8fr_2.2fr] md:py-28 lg:px-8">
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-frc-bronze">
               {content.eyebrow}
             </p>
@@ -95,7 +95,7 @@ export function ServicesPage({ locale, content }: ServicesPageProps) {
           </div>
         </section>
 
-        <section className="bg-frc-ink py-20 text-white md:py-28">
+        <section className="bg-frc-ink py-16 text-white md:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-10 md:grid-cols-[0.8fr_2.2fr]">
               <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-frc-gold">

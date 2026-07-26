@@ -35,7 +35,7 @@ const HeroSection = ({ locale = "en" }: HeroSectionProps) => {
   const t = getTranslations(locale)
   const registry = registryItems[locale]
   return (
-    <section className="relative w-full min-h-[540px] bg-[#fafbfc] pt-20 md:pt-24 overflow-hidden">
+    <section className="relative w-full min-h-[540px] bg-[#fafbfc] pt-12 md:pt-24 overflow-hidden">
       {/* Drifting blueprint grid */}
       <div className="absolute -inset-[80px] frc-drift pointer-events-none" aria-hidden>
         <svg className="w-[calc(100%+160px)] h-[calc(100%+160px)] opacity-[0.04]">

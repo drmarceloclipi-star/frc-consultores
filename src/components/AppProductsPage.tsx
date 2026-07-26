@@ -110,7 +110,7 @@ export function AppProductsPage({ locale, content }: AppProductsPageProps) {
             aria-hidden="true"
             className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:48px_48px]"
           />
-          <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 md:grid-cols-[1.55fr_0.8fr] md:items-end md:py-28 lg:px-8">
+          <div className="relative mx-auto grid max-w-6xl gap-12 px-4 pb-16 pt-12 sm:px-6 md:grid-cols-[1.55fr_0.8fr] md:items-end md:py-28 lg:px-8">
             <div>
               <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-frc-gold">
                 {content.eyebrow}
@@ -144,7 +144,7 @@ export function AppProductsPage({ locale, content }: AppProductsPageProps) {
           </div>
         </section>
 
-        <section aria-labelledby="app-catalog-title" className="bg-[#f7f5ef] py-20 md:py-28">
+        <section aria-labelledby="app-catalog-title" className="bg-[#f7f5ef] py-16 md:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-frc-bronze">
               {content.catalogEyebrow}
@@ -152,7 +152,7 @@ export function AppProductsPage({ locale, content }: AppProductsPageProps) {
             <h2 id="app-catalog-title" className="font-display mt-4 max-w-3xl text-4xl font-semibold leading-tight text-frc-ink md:text-5xl">
               {content.catalogTitle}
             </h2>
-            <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid gap-6 md:mt-12 md:grid-cols-2 lg:grid-cols-3">
               {content.products.map((product) => (
                 <ProductCard
                   key={product.id}
@@ -191,7 +191,7 @@ export function AppProductsPage({ locale, content }: AppProductsPageProps) {
           </div>
         </section>
 
-        <section className="bg-frc-ink py-20 text-white md:py-28">
+        <section className="bg-frc-ink py-16 text-white md:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-frc-gold">
               {content.comparisonEyebrow}
@@ -231,7 +231,7 @@ export function AppProductsPage({ locale, content }: AppProductsPageProps) {
           </div>
         </section>
 
-        <section className="bg-white py-20 md:py-28">
+        <section className="bg-white py-16 md:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-10 md:grid-cols-[0.8fr_2.2fr]">
               <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-frc-bronze">
@@ -286,7 +286,7 @@ export function AppProductsPage({ locale, content }: AppProductsPageProps) {
           </div>
         </section>
 
-        <section className="border-t border-gray-200 bg-[#f7f5ef] py-20 md:py-28">
+        <section className="border-t border-gray-200 bg-[#f7f5ef] py-16 md:py-28">
           <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 md:grid-cols-[0.8fr_2.2fr] lg:px-8">
             <div>
               <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-frc-bronze">

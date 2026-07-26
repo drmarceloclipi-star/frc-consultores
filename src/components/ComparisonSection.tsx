@@ -36,12 +36,12 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
   return (
     <section
       id="comparison"
-      className="relative w-full bg-[#f8f9fa] py-20 md:py-32 lg:py-32"
+      className="relative w-full bg-[#f8f9fa] py-16 md:py-32"
     >
       <TechGrid />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16 flex flex-col items-center text-center md:mb-20 lg:mb-24">
+        <div className="mb-12 flex flex-col items-center text-center md:mb-20 lg:mb-24">
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-frc-muted">
             <span className="text-frc-bronze">{"//"}</span> {t.comparison.eyebrow}
           </p>
@@ -57,7 +57,7 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
         </div>
 
         {/* Comparison Grid */}
-        <div className="relative mb-20 md:mb-24 lg:mb-32">
+        <div className="relative mb-16 md:mb-24 lg:mb-32">
           {/* Desktop layout: 2 columns with VS badge */}
           <div className="hidden md:grid grid-cols-2 gap-12 lg:gap-16">
             {/* Old Generation Column */}
@@ -171,20 +171,20 @@ export function ComparisonSection({ locale = "en" }: ComparisonSectionProps) {
         </div>
 
         {/* Stats Section */}
-        <div className="relative flex flex-col items-center border-t border-t-gray-200 pt-16 md:pt-20 lg:pt-24">
+        <div className="relative flex flex-col items-center border-t border-t-gray-200 pt-12 md:pt-20 lg:pt-24">
           {/* Heading */}
           <h3 className="mb-6 text-2xl font-bold text-[#2f4858] md:text-3xl">
             {t.comparison.breakthrough}
           </h3>
 
           {/* Intro Text */}
-          <p className="mx-auto mb-12 max-w-2xl text-center text-sm font-normal text-frc-muted leading-relaxed md:mb-16 md:text-base">
+          <p className="mx-auto mb-10 max-w-2xl text-center text-sm font-normal text-frc-muted leading-relaxed md:mb-16 md:text-base">
             {t.comparison.breakthroughText}
           </p>
 
           {/* Stats Grid */}
           <div className="w-full bg-white">
-            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3 md:gap-12 md:px-6 md:py-16 lg:gap-16 lg:px-8">
+            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 px-4 py-10 md:grid-cols-3 md:gap-12 md:px-6 md:py-16 lg:gap-16 lg:px-8">
               {stats.map((stat, index) => (
                 <ComparisonStat key={index} stat={stat} />
               ))}

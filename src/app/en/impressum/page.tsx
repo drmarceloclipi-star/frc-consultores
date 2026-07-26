@@ -16,10 +16,10 @@ export default function Impressum() {
     <div className="flex flex-col min-h-screen bg-white">
       <JsonLd data={contactPageSchema("en")} />
       <main className="flex-1">
-        <section className="w-full bg-white py-20 md:py-32">
+        <section className="w-full bg-white pb-16 pt-12 md:py-32">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             {/* Legal Data Section */}
-            <h1 className="font-display mb-8 text-4xl font-semibold text-[#2f4858]">
+            <h1 className="font-display mb-6 text-4xl font-semibold text-[#2f4858] md:mb-8">
               Legal Notice / Contact
             </h1>
 
@@ -48,7 +48,7 @@ export default function Impressum() {
             </div>
 
             {/* Privacy Notice Section */}
-            <div className="mt-16 space-y-6">
+            <div className="mt-12 space-y-6 md:mt-16">
               <h2 className="text-2xl font-bold text-[#2f4858]">Privacy Notice</h2>
 
               <p className="text-frc-muted">
@@ -125,7 +125,7 @@ export default function Impressum() {
             </div>
 
             {/* Footer note */}
-            <div className="mt-16 border-t border-gray-200 pt-8">
+            <div className="mt-12 border-t border-gray-200 pt-8 md:mt-16">
               <p className="text-sm text-frc-muted">
                 © 2026 FRC Consultores Associados LTDA. All rights reserved.
               </p>

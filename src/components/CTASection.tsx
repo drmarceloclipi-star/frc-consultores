@@ -10,7 +10,7 @@ const CTASection = ({ locale = "en" }: CTASectionProps) => {
   const t = getTranslations(locale)
 
   return (
-    <section className="frc-glow relative w-full min-h-[500px] flex items-center justify-center px-6 sm:px-6 py-[120px] md:py-[120px] lg:py-[120px] overflow-hidden">
+    <section className="frc-glow relative flex min-h-[440px] w-full items-center justify-center overflow-hidden px-6 py-20 sm:px-6 md:min-h-[500px] md:py-[120px]">
       {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-[700px]">
         {/* Heading */}

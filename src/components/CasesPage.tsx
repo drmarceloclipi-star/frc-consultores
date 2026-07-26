@@ -35,7 +35,7 @@ export function CasesPage({ locale, content }: CasesPageProps) {
     <div className="flex min-h-screen flex-col bg-white">
       <main className="flex-1">
         <section className="border-b border-gray-200 bg-frc-ink text-white">
-          <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+          <div className="mx-auto max-w-6xl px-4 pb-16 pt-12 sm:px-6 md:py-28 lg:px-8">
             <div className="grid gap-10 md:grid-cols-[0.8fr_2.2fr]">
               <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-frc-gold">
                 {content.eyebrow}
