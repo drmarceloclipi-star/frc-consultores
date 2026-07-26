@@ -1,4 +1,4 @@
-import { Fraunces, Geist } from "next/font/google"
+import { Geist, Source_Serif_4 } from "next/font/google"
 import type { ReactNode } from "react"
 import { JsonLd, organizationSchema, websiteSchema } from "@/lib/schema"
 import type { Locale } from "@/lib/translations"
@@ -9,10 +9,9 @@ const geistSans = Geist({
   subsets: ["latin"],
 })
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const displaySerif = Source_Serif_4({
+  variable: "--font-display-serif",
   subsets: ["latin"],
-  axes: ["opsz"],
   preload: false,
 })
 
@@ -28,7 +27,7 @@ export function LocalizedRootLayout({
   return (
     <html
       lang={locale === "pt" ? "pt-BR" : "en"}
-      className={`${geistSans.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${displaySerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <JsonLd data={organizationSchema} />

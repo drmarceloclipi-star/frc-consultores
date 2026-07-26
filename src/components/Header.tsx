@@ -12,6 +12,7 @@ export function Header({ locale = "en" }: HeaderProps) {
 
   const navItems = [
     { label: t.header.solutions, href: `/${locale}/services` },
+    { label: t.header.apps, href: `/${locale}/apps` },
     { label: t.header.cases, href: `/${locale}/cases` },
     { label: t.header.about, href: `/${locale}/about` },
   ]
@@ -22,13 +23,13 @@ export function Header({ locale = "en" }: HeaderProps) {
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center flex-shrink-0 mr-auto">
           <span className="text-lg md:text-xl font-bold text-[#2f4858]">
-            FRC Consultores
+            FRC
           </span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav
-          className="hidden md:flex items-center gap-8 lg:gap-8"
+          className="hidden md:flex items-center gap-6 lg:gap-8"
           aria-label={t.header.navigationLabel}
         >
           {navItems.map((item) => (

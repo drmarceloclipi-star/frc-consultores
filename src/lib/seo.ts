@@ -9,7 +9,7 @@ export function pageMetadata({
   description,
 }: {
   locale: "pt" | "en"
-  path: "" | "/about" | "/cases" | "/impressum" | "/services"
+  path: "" | "/about" | "/apps" | "/cases" | "/impressum" | "/services"
   title: string
   description: string
 }): Metadata {
@@ -20,8 +20,8 @@ export function pageMetadata({
     height: 630,
     alt:
       locale === "pt"
-        ? "FRC Consultores — Desenvolvimento de Software Sob Medida"
-        : "FRC Consultores — Custom Software Development",
+        ? "FRC — Desenvolvimento de Software Sob Medida"
+        : "FRC — Custom Software Development",
   }
 
   return {
@@ -39,7 +39,7 @@ export function pageMetadata({
       title,
       description,
       url,
-      siteName: "FRC Consultores",
+      siteName: "FRC",
       locale: locale === "pt" ? "pt_BR" : "en_US",
       type: "website",
       images: [socialImage],

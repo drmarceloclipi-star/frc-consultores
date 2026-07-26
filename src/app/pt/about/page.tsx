@@ -9,7 +9,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/about",
   title: "Sobre Nós — Empresa de Software desde 2015",
   description:
-    "Conheça a FRC Consultores Associados: história, atividades registradas (CNAEs de software, consultoria em TI e dados) e forma de trabalhar.",
+    "Conheça a FRC: história, atividades registradas (CNAEs de software, consultoria em TI e dados) e forma de trabalhar.",
 })
 
 const activities = [
@@ -53,12 +53,12 @@ export default function About() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-20 flex flex-col items-center text-center">
               <h1 className="font-display mb-6 text-4xl font-semibold text-[#2f4858] md:text-5xl">
-                Sobre a <span className="text-frc-bronze">FRC Consultores</span>
+                Sobre a <span className="text-frc-bronze">FRC</span>
               </h1>
 
               <p className="mx-auto max-w-2xl text-base font-normal text-frc-muted leading-relaxed md:text-lg">
-                A FRC Consultores Associados LTDA é uma empresa brasileira fundada em
-                2015, em Recife-PE, com origem em consultoria e engenharia. Em 2026,
+                A FRC é uma empresa brasileira fundada em 2015, em Recife-PE, com
+                origem em consultoria e engenharia. Em 2026,
                 expandiu seu objeto social para o desenvolvimento e licenciamento de
                 programas de computador, consultoria em tecnologia da informação e
                 serviços de hospedagem e tratamento de dados — hoje sua atividade

@@ -10,6 +10,8 @@
         "http://localhost:3000/en",
         "http://localhost:3000/pt/services",
         "http://localhost:3000/en/services",
+        "http://localhost:3000/pt/apps",
+        "http://localhost:3000/en/apps",
         "http://localhost:3000/pt/cases",
         "http://localhost:3000/en/cases",
         "http://localhost:3000/pt/about",

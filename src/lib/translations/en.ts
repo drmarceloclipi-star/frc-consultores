@@ -3,6 +3,7 @@ export const enTranslations = {
   header: {
     whyNow: "Home",
     solutions: "Services",
+    apps: "Apps",
     cases: "Case Studies",
     about: "About Us",
     contact: "Contact",
@@ -16,7 +17,7 @@ export const enTranslations = {
     titlePart1: "Custom Software",
     titlePart2: "for Your Business",
     description:
-      "FRC Consultores Associados develops and licenses computer software, mobile apps and web systems — with IT consulting and hosting services from end to end.",
+      "FRC develops and licenses computer software, mobile apps and web systems — with IT consulting and hosting services from end to end.",
     seeDifference: "Why Custom-Built?",
     viewExamples: "Our Services",
   },
@@ -171,6 +172,8 @@ export const enTranslations = {
     companyPlaceholder: "Your company",
     messageLabel: "Message",
     messagePlaceholder: "Tell us about your project...",
+    selectedProductLabel: "Selected package",
+    startingPriceLabel: "starting at",
     setupCall: "Set up a call",
     requestMoreInfo: "Request more information about:",
     training: "Software Development",

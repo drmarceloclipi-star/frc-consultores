@@ -53,7 +53,7 @@ export function createSocialImage(locale: "pt" | "en") {
             lineHeight: 1.1,
           }}
         >
-          FRC Consultores
+          FRC
         </div>
         <div
           style={{

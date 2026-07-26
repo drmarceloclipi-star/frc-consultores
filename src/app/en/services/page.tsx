@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/services",
   title: "Custom Software, App Development and IT Consulting",
   description:
-    "Web and mobile development, architecture, publishing, hosting and continuous evolution by FRC Consultores.",
+    "Web and mobile development, architecture, publishing, hosting and continuous evolution by FRC.",
 })
 
 const content = {

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 import { BASE_URL } from "@/lib/seo"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/services", "/cases", "/about", "/impressum"]
+  const routes = ["", "/services", "/apps", "/cases", "/about", "/impressum"]
   const locales = ["pt", "en"]
   return locales.flatMap((locale) =>
     routes.map((route) => ({

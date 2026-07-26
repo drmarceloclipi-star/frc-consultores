@@ -7,8 +7,8 @@ import "../globals.css"
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "FRC Consultores Associados — Desenvolvimento de Software",
-    template: "%s | FRC Consultores",
+    default: "FRC — Desenvolvimento de Software",
+    template: "%s | FRC",
   },
 }
 
