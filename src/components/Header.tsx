@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 import { getTranslations, type Locale } from "@/lib/translations"
 import { ContactTrigger } from "./ContactTrigger"
@@ -27,13 +26,14 @@ export function Header({ locale = "en" }: HeaderProps) {
           className="flex items-center flex-shrink-0 mr-auto"
           aria-label="FRC"
         >
-          <Image
-            src="/images/brand/frc-logo.png"
+          {/* Pre-optimized static asset avoids a dynamic image backend on Firebase Hosting. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/brand/frc-logo.webp"
             alt="FRC"
             width={96}
             height={32}
             className="h-7 w-auto sm:h-8"
-            fetchPriority="high"
           />
         </Link>
 
