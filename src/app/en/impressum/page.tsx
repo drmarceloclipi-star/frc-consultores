@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Footer } from "@/components/Footer"
 import { pageMetadata } from "@/lib/seo"
 import { JsonLd, contactPageSchema } from "@/lib/schema"
@@ -48,80 +49,20 @@ export default function Impressum() {
             </div>
 
             {/* Privacy Notice Section */}
-            <div className="mt-12 space-y-6 md:mt-16">
+            <div className="mt-12 space-y-4 md:mt-16">
               <h2 className="text-2xl font-bold text-[#2f4858]">Privacy Notice</h2>
-
               <p className="text-frc-muted">
-                We process personal data in accordance with the Brazilian General Data
-                Protection Law — LGPD (Law No. 13,709/2018).
+                We process personal data in accordance with the LGPD (Law No.
+                13,709/2018), including on this website and in the FRC Software apps.
               </p>
-
-              <div className="space-y-6">
-                <div>
-                  <h3 className="mb-2 font-bold text-[#2f4858]">1. Controller</h3>
-                  <p className="text-frc-muted">
-                    The controller responsible for data processing is FRC Consultores
-                    Associados LTDA, identified above.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="mb-2 font-bold text-[#2f4858]">
-                    2. Purpose of data processing
-                  </h3>
-                  <p className="text-frc-muted">
-                    If you provide your email address on this website, it will only be
-                    used to contact you or provide the information you requested.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="mb-2 font-bold text-[#2f4858]">3. Legal basis</h3>
-                  <p className="text-frc-muted">
-                    Processing is carried out on the basis of your consent, pursuant to
-                    Art. 7, item I, of the LGPD.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="mb-2 font-bold text-[#2f4858]">4. Data storage</h3>
-                  <p className="text-frc-muted">
-                    Your data is stored only for as long as necessary for the stated
-                    purpose or until you withdraw your consent.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="mb-2 font-bold text-[#2f4858]">5. Data disclosure</h3>
-                  <p className="text-frc-muted">
-                    We do not share your personal data with third parties unless
-                    required by law or with your explicit consent.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="mb-2 font-bold text-[#2f4858]">6. Your rights</h3>
-                  <p className="text-frc-muted">
-                    Under Art. 18 of the LGPD, you may request confirmation of
-                    processing, access, rectification, anonymization, portability and
-                    deletion of your data, and withdraw your consent at any time.
-                  </p>
-                  <p className="mt-2 text-frc-muted">
-                    To exercise these rights, contact us at the email address shown
-                    above.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="mb-2 font-bold text-[#2f4858]">
-                    7. Withdrawal of consent
-                  </h3>
-                  <p className="text-frc-muted">
-                    You may withdraw your consent at any time. This does not affect the
-                    lawfulness of processing carried out before the withdrawal.
-                  </p>
-                </div>
-              </div>
+              <p>
+                <Link
+                  href="/en/privacy"
+                  className="font-medium text-frc-bronze underline decoration-1 underline-offset-4 hover:text-frc-ink"
+                >
+                  Read the full Privacy Policy →
+                </Link>
+              </p>
             </div>
 
             {/* Footer note */}

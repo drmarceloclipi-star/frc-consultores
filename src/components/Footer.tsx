@@ -4,7 +4,7 @@ import { getTranslations, type Locale } from "@/lib/translations"
 
 interface FooterProps {
   locale?: Locale
-  path?: "" | "/about" | "/apps" | "/cases" | "/impressum" | "/services"
+  path?: "" | "/about" | "/apps" | "/cases" | "/impressum" | "/privacy" | "/services"
 }
 
 export function Footer({ locale = "en", path = "" }: FooterProps) {
@@ -41,6 +41,13 @@ export function Footer({ locale = "en", path = "" }: FooterProps) {
             className="text-sm font-normal text-gray-600 hover:text-gray-900 transition-colors duration-200"
           >
             {t.header.cases}
+          </Link>
+
+          <Link
+            href={`/${locale}/privacy`}
+            className="text-sm font-normal text-gray-600 hover:text-gray-900 transition-colors duration-200"
+          >
+            {t.footer.privacy}
           </Link>
 
           {/* Imprint Link */}
