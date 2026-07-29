@@ -208,6 +208,7 @@ export const enTranslations = {
     copyright:
       "© 2026 FRC Consultores Associados LTDA · CNPJ 22.052.463/0001-30 · Recife, Brazil. All rights reserved.",
     imprint: "Legal Notice",
+    privacy: "Privacy",
     language: "Language",
   },
 } as const

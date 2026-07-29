@@ -356,7 +356,7 @@ export function ContactFormModal({
             <label htmlFor={privacyId} className="ml-2 cursor-pointer text-sm text-frc-muted">
               {t.contactForm.privacyLabel}{" "}
               <a
-                href={`/${locale}/impressum`}
+                href={`/${locale}/privacy`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-frc-bronze underline decoration-1 underline-offset-4 hover:text-frc-ink"

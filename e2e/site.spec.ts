@@ -13,6 +13,8 @@ const localizedRoutes = [
   { locale: "en", path: "/en/cases", heading: "Real software, available to explore." },
   { locale: "pt", path: "/pt/impressum", heading: "Dados Legais" },
   { locale: "en", path: "/en/impressum", heading: "Legal Notice" },
+  { locale: "pt", path: "/pt/privacy", heading: "Política de Privacidade" },
+  { locale: "en", path: "/en/privacy", heading: "Privacy Policy" },
 ] as const
 
 test("root redirects permanently to the Portuguese homepage", async ({ page }) => {

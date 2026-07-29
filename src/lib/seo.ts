@@ -9,7 +9,7 @@ export function pageMetadata({
   description,
 }: {
   locale: "pt" | "en"
-  path: "" | "/about" | "/apps" | "/cases" | "/impressum" | "/services"
+  path: "" | "/about" | "/apps" | "/cases" | "/impressum" | "/privacy" | "/services"
   title: string
   description: string
 }): Metadata {
