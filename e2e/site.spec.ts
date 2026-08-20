@@ -114,11 +114,9 @@ test("app catalog exposes prices, external costs and structured offers", async (
   expect(catalog?.itemListElement).toHaveLength(6)
 })
 
-test("Entrela case links the FRC entity, product and localized legal documents", async ({
+test("product cases link the FRC entity and localized legal documents", async ({
   page,
 }) => {
-  await page.setViewportSize({ width: 320, height: 700 })
-
   const locales = [
     {
       path: "/pt/cases",
@@ -129,6 +127,13 @@ test("Entrela case links the FRC entity, product and localized legal documents",
       privacyUrl: "https://ladoalado.app/privacidade",
       termsLabel: "Termos de uso do Entrela",
       termsUrl: "https://ladoalado.app/termos",
+      triagemiaOwnership:
+        "A Triagemia é um produto digital gratuito desenvolvido, licenciado e operado pela FRC Consultores Associados LTDA.",
+      triagemiaUrl: "https://triagemia.com.br/",
+      triagemiaPrivacyLabel: "Privacidade da Triagemia",
+      triagemiaPrivacyUrl: "https://triagemia.com.br/privacidade",
+      triagemiaTermsLabel: "Termos de uso da Triagemia",
+      triagemiaTermsUrl: "https://triagemia.com.br/termos",
     },
     {
       path: "/en/cases",
@@ -139,10 +144,18 @@ test("Entrela case links the FRC entity, product and localized legal documents",
       privacyUrl: "https://ladoalado.app/en/privacy",
       termsLabel: "Entrela Terms of Use",
       termsUrl: "https://ladoalado.app/en/terms",
+      triagemiaOwnership:
+        "Triagemia is a free digital product developed, licensed, and operated by FRC Consultores Associados LTDA.",
+      triagemiaUrl: "https://triagemia.com.br/en/",
+      triagemiaPrivacyLabel: "Triagemia Privacy Policy",
+      triagemiaPrivacyUrl: "https://triagemia.com.br/en/privacidade",
+      triagemiaTermsLabel: "Triagemia Terms of Use",
+      triagemiaTermsUrl: "https://triagemia.com.br/en/termos",
     },
   ] as const
 
   for (const locale of locales) {
+    await page.setViewportSize({ width: 320, height: 700 })
     await page.goto(locale.path)
 
     const entrela = page.getByRole("article").filter({ hasText: "Entrela" })
@@ -157,34 +170,91 @@ test("Entrela case links the FRC entity, product and localized legal documents",
       entrela.getByRole("link", { name: locale.termsLabel })
     ).toHaveAttribute("href", locale.termsUrl)
 
+    const triagemia = page.getByRole("article").filter({ hasText: "Triagemia" })
+    await expect(triagemia).toContainText(locale.triagemiaOwnership)
+    await expect(
+      triagemia.getByRole("link", { name: new RegExp(locale.visitLabel) })
+    ).toHaveAttribute("href", locale.triagemiaUrl)
+    await expect(
+      triagemia.getByRole("link", { name: locale.triagemiaPrivacyLabel })
+    ).toHaveAttribute("href", locale.triagemiaPrivacyUrl)
+    await expect(
+      triagemia.getByRole("link", { name: locale.triagemiaTermsLabel })
+    ).toHaveAttribute("href", locale.triagemiaTermsUrl)
+
+    const triagemiaLinks = triagemia.getByRole("link")
+    await expect(triagemiaLinks).toHaveCount(3)
+    for (let index = 0; index < 3; index += 1) {
+      const link = triagemiaLinks.nth(index)
+      const box = await link.boundingBox()
+      expect(box?.height).toBeGreaterThanOrEqual(44)
+      await link.focus()
+      const hasVisibleFocus = await link.evaluate((element) => {
+        const style = getComputedStyle(element)
+        return (
+          (style.outlineStyle !== "none" && Number.parseFloat(style.outlineWidth) > 0) ||
+          style.boxShadow !== "none"
+        )
+      })
+      expect(hasVisibleFocus).toBe(true)
+    }
+
     const schemas = await page
       .locator('script[type="application/ld+json"]')
       .allTextContents()
     const nodes = schemas.flatMap((schema) => {
       const document = JSON.parse(schema) as {
+        "@type"?: string
+        "@id"?: string
         "@graph"?: Record<string, unknown>[]
       }
-      return document["@graph"] ?? []
+      return document["@graph"] ?? [document]
     })
-    const organization = nodes.find((node) => node["@type"] === "Organization")
-    const brand = nodes.find((node) => node["@type"] === "Brand")
-    const application = nodes.find(
-      (node) => node["@type"] === "SoftwareApplication"
+    const organizations = nodes.filter((node) => node["@type"] === "Organization")
+    const organization = organizations[0]
+    const entrelaBrand = nodes.find(
+      (node) => node["@id"] === "https://ladoalado.app/#brand"
+    )
+    const entrelaApplication = nodes.find(
+      (node) => node["@id"] === "https://ladoalado.app/#softwareapplication"
+    )
+    const triagemiaBrand = nodes.find(
+      (node) => node["@id"] === "https://triagemia.com.br/#brand"
+    )
+    const triagemiaApplication = nodes.find(
+      (node) => node["@id"] === "https://triagemia.com.br/#softwareapplication"
     )
 
+    expect(organizations).toHaveLength(1)
     expect(organization).toMatchObject({
       "@id": "https://frcconsultores.com.br/#organization",
       legalName: "FRC Consultores Associados LTDA",
-      brand: { "@id": "https://ladoalado.app/#brand" },
+      brand: [
+        { "@id": "https://ladoalado.app/#brand" },
+        { "@id": "https://triagemia.com.br/#brand" },
+      ],
     })
-    expect(brand).toMatchObject({
+    expect(entrelaBrand).toMatchObject({
       "@id": "https://ladoalado.app/#brand",
       name: "Entrela",
     })
-    expect(application).toMatchObject({
+    expect(entrelaApplication).toMatchObject({
       "@id": "https://ladoalado.app/#softwareapplication",
       url: "https://ladoalado.app/",
       operatingSystem: ["Web", "iOS", "Android"],
+      brand: { "@id": "https://ladoalado.app/#brand" },
+      creator: { "@id": "https://frcconsultores.com.br/#organization" },
+      publisher: { "@id": "https://frcconsultores.com.br/#organization" },
+    })
+    expect(triagemiaBrand).toMatchObject({
+      "@id": "https://triagemia.com.br/#brand",
+      name: "Triagemia",
+    })
+    expect(triagemiaApplication).toMatchObject({
+      "@id": "https://triagemia.com.br/#softwareapplication",
+      url: "https://triagemia.com.br/",
+      operatingSystem: ["Web", "iOS", "Android"],
+      brand: { "@id": "https://triagemia.com.br/#brand" },
       creator: { "@id": "https://frcconsultores.com.br/#organization" },
       publisher: { "@id": "https://frcconsultores.com.br/#organization" },
     })
@@ -194,38 +264,60 @@ test("Entrela case links the FRC entity, product and localized legal documents",
       viewport: document.documentElement.clientWidth,
     }))
     expect(width.document).toBe(width.viewport)
+
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto(locale.path)
+    const desktopWidth = await page.evaluate(() => ({
+      document: document.documentElement.scrollWidth,
+      viewport: document.documentElement.clientWidth,
+    }))
+    expect(desktopWidth.document).toBe(desktopWidth.viewport)
   }
 })
 
-test("FRC privacy policy separates local apps from Entrela backend processing", async ({
+test("FRC privacy policy delegates product processing to separate policies", async ({
   page,
 }) => {
   const locales = [
     {
       path: "/pt/privacy",
       heading: "4. Entrela — política própria",
-      scope: "O Entrela possui escopo e política próprios",
+      scope: "Entrela e Triagemia possuem escopos e políticas próprios",
       controllerScope:
         "Para os tratamentos realizados no site frcconsultores.com.br e nos aplicativos móveis locais da marca FRC Software",
       disclosureScope:
-        "Os compartilhamentos do Entrela estão descritos em sua política própria.",
+        "Os compartilhamentos de Entrela e Triagemia estão descritos nas políticas próprias de cada produto.",
       privacyLabel: "Política de Privacidade do Entrela",
       privacyUrl: "https://ladoalado.app/privacidade",
       termsLabel: "Termos de Uso do Entrela",
       termsUrl: "https://ladoalado.app/termos",
+      triagemiaHeading: "5. Triagemia — política própria",
+      triagemiaScope:
+        "Seu tratamento de dados possui escopo próprio e não é descrito nesta política corporativa.",
+      triagemiaPrivacyLabel: "Política de Privacidade da Triagemia",
+      triagemiaPrivacyUrl: "https://triagemia.com.br/privacidade",
+      triagemiaTermsLabel: "Termos de Uso da Triagemia",
+      triagemiaTermsUrl: "https://triagemia.com.br/termos",
     },
     {
       path: "/en/privacy",
       heading: "4. Entrela — separate policy",
-      scope: "Entrela has a distinct scope and its own policy",
+      scope: "Entrela and Triagemia have distinct scopes and separate policies",
       controllerScope:
         "For processing carried out on frcconsultores.com.br and in the local mobile apps under the FRC Software brand",
       disclosureScope:
-        "Entrela disclosures are described in its own policy.",
+        "Entrela and Triagemia disclosures are described in each product's own policy.",
       privacyLabel: "Entrela Privacy Policy",
       privacyUrl: "https://ladoalado.app/en/privacy",
       termsLabel: "Entrela Terms of Use",
       termsUrl: "https://ladoalado.app/en/terms",
+      triagemiaHeading: "5. Triagemia — separate policy",
+      triagemiaScope:
+        "Its data processing has a distinct scope and is not described in this corporate policy.",
+      triagemiaPrivacyLabel: "Triagemia Privacy Policy",
+      triagemiaPrivacyUrl: "https://triagemia.com.br/en/privacidade",
+      triagemiaTermsLabel: "Triagemia Terms of Use",
+      triagemiaTermsUrl: "https://triagemia.com.br/en/termos",
     },
   ] as const
 
@@ -245,6 +337,16 @@ test("FRC privacy policy separates local apps from Entrela backend processing", 
       "href",
       locale.termsUrl
     )
+    await expect(
+      main.getByRole("heading", { name: locale.triagemiaHeading })
+    ).toBeVisible()
+    await expect(main).toContainText(locale.triagemiaScope)
+    await expect(
+      main.getByRole("link", { name: locale.triagemiaPrivacyLabel })
+    ).toHaveAttribute("href", locale.triagemiaPrivacyUrl)
+    await expect(
+      main.getByRole("link", { name: locale.triagemiaTermsLabel })
+    ).toHaveAttribute("href", locale.triagemiaTermsUrl)
   }
 })
 

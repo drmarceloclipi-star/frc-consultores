@@ -8,7 +8,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/privacy",
   title: "Privacy Policy",
   description:
-    "Privacy policy of FRC Consultores Associados LTDA (LGPD): the corporate website, local FRC Software apps and Entrela's own policy.",
+    "Privacy policy of FRC Consultores Associados LTDA (LGPD): the corporate website, local FRC Software apps and the separate policies of Entrela and Triagemia.",
 })
 
 export default function Privacy() {
@@ -26,9 +26,8 @@ export default function Privacy() {
               Protection Law — LGPD (Law No. 13,709/2018). This page describes processing
               on frcconsultores.com.br and in the local mobile apps under the{" "}
               <strong className="font-semibold text-[#2f4858]">FRC Software</strong>{" "}
-              brand, operated by FRC Consultores Associados LTDA. Entrela has a distinct
-              scope and its own policy because it processes account and health data in
-              backend services.
+              brand, operated by FRC Consultores Associados LTDA. Entrela and Triagemia
+              have distinct scopes and separate policies linked from this page.
             </p>
 
             <div className="mb-10 space-y-2 rounded-lg border border-gray-200 bg-[#F8F9FA] p-4 text-sm text-frc-muted">
@@ -61,7 +60,8 @@ export default function Privacy() {
                   For processing carried out on frcconsultores.com.br and in the local
                   mobile apps under the FRC Software brand described in sections 2 and 3,
                   the controller is FRC Consultores Associados LTDA, identified above.
-                  Entrela roles and disclosures are described in its own policy.
+                  Entrela and Triagemia roles and disclosures are described in each
+                  product&apos;s own policy.
                 </p>
               </div>
 
@@ -136,7 +136,36 @@ export default function Privacy() {
               </div>
 
               <div>
-                <h2 className="mb-2 text-xl font-bold text-[#2f4858]">5. Legal basis</h2>
+                <h2 className="mb-2 text-xl font-bold text-[#2f4858]">
+                  5. Triagemia — separate policy
+                </h2>
+                <p className="text-frc-muted">
+                  Triagemia is a digital product developed, licensed, and operated by
+                  FRC Consultores Associados LTDA. Its data processing has a distinct
+                  scope and is not described in this corporate policy. See the{" "}
+                  <a
+                    href="https://triagemia.com.br/en/privacidade"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-medium text-frc-bronze underline decoration-1 underline-offset-4 hover:text-frc-ink"
+                  >
+                    Triagemia Privacy Policy
+                  </a>{" "}
+                  and the{" "}
+                  <a
+                    href="https://triagemia.com.br/en/termos"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-medium text-frc-bronze underline decoration-1 underline-offset-4 hover:text-frc-ink"
+                  >
+                    Triagemia Terms of Use
+                  </a>
+                  .
+                </p>
+              </div>
+
+              <div>
+                <h2 className="mb-2 text-xl font-bold text-[#2f4858]">6. Legal basis</h2>
                 <p className="text-frc-muted">
                   When we process personal data you send us (for example an email via
                   the website or a message you choose to send), processing is based on
@@ -147,7 +176,7 @@ export default function Privacy() {
               </div>
 
               <div>
-                <h2 className="mb-2 text-xl font-bold text-[#2f4858]">6. Data storage</h2>
+                <h2 className="mb-2 text-xl font-bold text-[#2f4858]">7. Data storage</h2>
                 <p className="text-frc-muted">
                   Data received by FRC (for example contact messages) is stored only for
                   as long as necessary for the stated purpose or until you withdraw your
@@ -157,17 +186,17 @@ export default function Privacy() {
               </div>
 
               <div>
-                <h2 className="mb-2 text-xl font-bold text-[#2f4858]">7. Data disclosure</h2>
+                <h2 className="mb-2 text-xl font-bold text-[#2f4858]">8. Data disclosure</h2>
                 <p className="text-frc-muted">
                   On the corporate website and in the local mobile apps under the FRC
                   Software brand, we do not share your personal data with third parties
-                  unless required by law or with your explicit consent. Entrela disclosures
-                  are described in its own policy.
+                  unless required by law or with your explicit consent. Entrela and
+                  Triagemia disclosures are described in each product&apos;s own policy.
                 </p>
               </div>
 
               <div>
-                <h2 className="mb-2 text-xl font-bold text-[#2f4858]">8. Your rights</h2>
+                <h2 className="mb-2 text-xl font-bold text-[#2f4858]">9. Your rights</h2>
                 <p className="text-frc-muted">
                   Under Art. 18 of the LGPD, you may request confirmation of processing,
                   access, rectification, anonymization, portability and deletion of your
@@ -182,7 +211,7 @@ export default function Privacy() {
 
               <div>
                 <h2 className="mb-2 text-xl font-bold text-[#2f4858]">
-                  9. Withdrawal of consent
+                  10. Withdrawal of consent
                 </h2>
                 <p className="text-frc-muted">
                   You may withdraw your consent at any time. This does not affect the

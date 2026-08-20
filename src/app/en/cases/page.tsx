@@ -1,13 +1,13 @@
 /*
  * THESIS: Every project is visitable proof, not a logo or an unsupported promise.
  * OWN-WORLD: White dossier paper, deep slate ink, gold notation and functional labels.
- * STORY: Visitors scan four products, recognize breadth and open the public evidence.
+ * STORY: Visitors scan five products, recognize breadth and open the public evidence.
  * FIRST VIEWPORT: Dark field, editorial title and a promise bounded by verifiable facts.
  * FORM: Sequential numbered dossiers, structural candidate 5, seed 0910df44.
  */
 import type { Metadata } from "next"
 import { CasesPage } from "@/components/CasesPage"
-import { JsonLd, breadcrumbSchema, entrelaCaseSchema } from "@/lib/schema"
+import { JsonLd, breadcrumbSchema, productCasesSchema } from "@/lib/schema"
 import { pageMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = pageMetadata({
@@ -15,14 +15,14 @@ export const metadata: Metadata = pageMetadata({
   path: "/cases",
   title: "Case Studies in Apps, AI and Digital Products",
   description:
-    "Explore public FRC projects: Levanta Mão, Jourmingo, Entrela and Medário.",
+    "Explore public FRC projects: Levanta Mão, Jourmingo, Entrela, Medário and Triagemia.",
 })
 
 const content = {
   eyebrow: "Selected case studies",
   title: "Real software, available to explore.",
   intro:
-    "Four products in distinct contexts — live interaction, private AI, digital health and professional discovery. No invented metrics: every case links to public evidence.",
+    "Five products in distinct contexts — live interaction, private AI, digital health, professional discovery and psychiatric triage. No invented metrics: every case links to public evidence.",
   visitLabel: "Visit project",
   proofLabel: "About the evidence",
   proofText:
@@ -82,6 +82,27 @@ const content = {
       url: "https://medario.com.br/",
       domain: "medario.com.br",
     },
+    {
+      index: "05",
+      name: "Triagemia",
+      category: "Psychiatric triage",
+      title: "Structured collection and AI-assisted clinical summaries.",
+      description:
+        "Triagemia is a free digital product developed, licensed, and operated by FRC Consultores Associados LTDA. It supports mental health professionals with structured collection and AI-assisted clinical summaries, without providing a diagnosis.",
+      capabilities: ["Web", "iOS", "Android", "Mental health"],
+      url: "https://triagemia.com.br/en/",
+      domain: "triagemia.com.br",
+      links: [
+        {
+          label: "Triagemia Privacy Policy",
+          url: "https://triagemia.com.br/en/privacidade",
+        },
+        {
+          label: "Triagemia Terms of Use",
+          url: "https://triagemia.com.br/en/termos",
+        },
+      ],
+    },
   ],
   ctaTitle: "Your project can become the next case — when it is ready.",
   ctaDescription:
@@ -98,7 +119,7 @@ export default function Cases() {
           { name: "Case studies", path: "/en/cases" },
         ])}
       />
-      <JsonLd data={entrelaCaseSchema("en")} />
+      <JsonLd data={productCasesSchema("en")} />
       <CasesPage locale="en" content={content} />
     </>
   )

@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Added Triagemia as the fifth localized case, with product-specific legal links and structured data tied to the FRC organization
+
 ### Changed
 - Raised the project Node.js baseline to 24 across local development, CI, Docker, and contributor-facing documentation
+- Clarified that Entrela and Triagemia maintain separate product privacy policies from the FRC corporate policy
 
 ## [0.3.1] - 2026-03-29
 
