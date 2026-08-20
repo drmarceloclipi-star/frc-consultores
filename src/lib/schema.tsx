@@ -77,6 +77,45 @@ export function contactPageSchema(locale: "pt" | "en") {
   }
 }
 
+export function entrelaCaseSchema(locale: "pt" | "en") {
+  const isPt = locale === "pt"
+  const entrelaUrl = "https://ladoalado.app/"
+  const brandId = `${entrelaUrl}#brand`
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${BASE_URL}/#organization`,
+        name: "FRC",
+        legalName: "FRC Consultores Associados LTDA",
+        url: BASE_URL,
+        brand: { "@id": brandId },
+      },
+      {
+        "@type": "Brand",
+        "@id": brandId,
+        name: "Entrela",
+        url: entrelaUrl,
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${entrelaUrl}#softwareapplication`,
+        name: "Entrela",
+        url: entrelaUrl,
+        applicationCategory: "HealthApplication",
+        operatingSystem: ["Web", "iOS", "Android"],
+        description: isPt
+          ? "Produto digital desenvolvido e operado pela FRC Consultores Associados LTDA para apoiar o acompanhamento entre pessoas e profissionais de saúde."
+          : "A digital product developed and operated by FRC Consultores Associados LTDA to support follow-up between people and healthcare professionals.",
+        creator: { "@id": `${BASE_URL}/#organization` },
+        publisher: { "@id": `${BASE_URL}/#organization` },
+      },
+    ],
+  }
+}
+
 export function appProductCatalogSchema(
   locale: "pt" | "en",
   products: readonly {

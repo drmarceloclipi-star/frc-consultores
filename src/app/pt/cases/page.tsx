@@ -7,7 +7,7 @@
  */
 import type { Metadata } from "next"
 import { CasesPage } from "@/components/CasesPage"
-import { JsonLd, breadcrumbSchema } from "@/lib/schema"
+import { JsonLd, breadcrumbSchema, entrelaCaseSchema } from "@/lib/schema"
 import { pageMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = pageMetadata({
@@ -56,10 +56,20 @@ const content = {
       category: "Saúde digital",
       title: "Acompanhamento entre pessoas e profissionais de saúde.",
       description:
-        "Uma experiência digital para responder questionários de bem-estar, acompanhar informações ao longo do tempo e apoiar a comunicação com o profissional responsável.",
+        "O Entrela é um produto digital desenvolvido e operado pela FRC Consultores Associados LTDA. Organiza questionários de bem-estar e outras informações ao longo do tempo para apoiar a comunicação com o profissional de saúde vinculado.",
       capabilities: ["Web", "iOS", "Android", "Dados de saúde"],
-      url: "https://ladoalado.app/login",
+      url: "https://ladoalado.app/",
       domain: "ladoalado.app",
+      links: [
+        {
+          label: "Privacidade do Entrela",
+          url: "https://ladoalado.app/privacidade",
+        },
+        {
+          label: "Termos de uso do Entrela",
+          url: "https://ladoalado.app/termos",
+        },
+      ],
     },
     {
       index: "04",
@@ -88,6 +98,7 @@ export default function Cases() {
           { name: "Cases", path: "/pt/cases" },
         ])}
       />
+      <JsonLd data={entrelaCaseSchema("pt")} />
       <CasesPage locale="pt" content={content} />
     </>
   )

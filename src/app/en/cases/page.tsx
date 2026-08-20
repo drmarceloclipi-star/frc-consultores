@@ -7,7 +7,7 @@
  */
 import type { Metadata } from "next"
 import { CasesPage } from "@/components/CasesPage"
-import { JsonLd, breadcrumbSchema } from "@/lib/schema"
+import { JsonLd, breadcrumbSchema, entrelaCaseSchema } from "@/lib/schema"
 import { pageMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = pageMetadata({
@@ -56,10 +56,20 @@ const content = {
       category: "Digital health",
       title: "Follow-up between people and health professionals.",
       description:
-        "A digital experience for answering well-being questionnaires, following information over time and supporting communication with the responsible professional.",
+        "Entrela is a digital product developed and operated by FRC Consultores Associados LTDA. It organizes well-being questionnaires and other information over time to support communication with the linked healthcare professional.",
       capabilities: ["Web", "iOS", "Android", "Health data"],
-      url: "https://ladoalado.app/login",
+      url: "https://ladoalado.app/",
       domain: "ladoalado.app",
+      links: [
+        {
+          label: "Entrela Privacy Policy",
+          url: "https://ladoalado.app/en/privacy",
+        },
+        {
+          label: "Entrela Terms of Use",
+          url: "https://ladoalado.app/en/terms",
+        },
+      ],
     },
     {
       index: "04",
@@ -88,6 +98,7 @@ export default function Cases() {
           { name: "Case studies", path: "/en/cases" },
         ])}
       />
+      <JsonLd data={entrelaCaseSchema("en")} />
       <CasesPage locale="en" content={content} />
     </>
   )
