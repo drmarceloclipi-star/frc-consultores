@@ -1,13 +1,13 @@
 /*
  * THESIS: Cada projeto é uma prova visitável, não um logotipo ou uma promessa.
  * OWN-WORLD: Dossiê branco, tinta azul-petróleo, marcações douradas e etiquetas funcionais.
- * STORY: O visitante percorre quatro produtos, reconhece amplitude e visita a evidência pública.
+ * STORY: O visitante percorre cinco produtos, reconhece amplitude e visita a evidência pública.
  * FIRST VIEWPORT: Fundo escuro, título editorial e promessa limitada ao que pode ser verificado.
  * FORM: Dossiês numerados em sequência, candidato estrutural 5, seed 0910df44.
  */
 import type { Metadata } from "next"
 import { CasesPage } from "@/components/CasesPage"
-import { JsonLd, breadcrumbSchema, entrelaCaseSchema } from "@/lib/schema"
+import { JsonLd, breadcrumbSchema, productCasesSchema } from "@/lib/schema"
 import { pageMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = pageMetadata({
@@ -15,14 +15,14 @@ export const metadata: Metadata = pageMetadata({
   path: "/cases",
   title: "Cases de Aplicativos, IA e Produtos Digitais",
   description:
-    "Conheça projetos públicos da FRC: Levanta Mão, Jourmingo, Entrela e Medário.",
+    "Conheça projetos públicos da FRC: Levanta Mão, Jourmingo, Entrela, Medário e Triagemia.",
 })
 
 const content = {
   eyebrow: "Cases selecionados",
   title: "Software real, disponível para conhecer.",
   intro:
-    "Quatro produtos com contextos distintos — interação ao vivo, IA privada, saúde digital e descoberta de profissionais. Sem métricas inventadas: cada case leva à sua evidência pública.",
+    "Cinco produtos com contextos distintos — interação ao vivo, IA privada, saúde digital, descoberta de profissionais e triagem psiquiátrica. Sem métricas inventadas: cada case leva à sua evidência pública.",
   visitLabel: "Visitar projeto",
   proofLabel: "Sobre as evidências",
   proofText:
@@ -82,6 +82,27 @@ const content = {
       url: "https://medario.com.br/",
       domain: "medario.com.br",
     },
+    {
+      index: "05",
+      name: "Triagemia",
+      category: "Triagem psiquiátrica",
+      title: "Coleta estruturada e síntese clínica assistida por IA.",
+      description:
+        "A Triagemia é um produto digital gratuito desenvolvido, licenciado e operado pela FRC Consultores Associados LTDA. Apoia profissionais de saúde mental na coleta estruturada e na síntese clínica assistida por IA, sem constituir diagnóstico.",
+      capabilities: ["Web", "iOS", "Android", "Saúde mental"],
+      url: "https://triagemia.com.br/",
+      domain: "triagemia.com.br",
+      links: [
+        {
+          label: "Privacidade da Triagemia",
+          url: "https://triagemia.com.br/privacidade",
+        },
+        {
+          label: "Termos de uso da Triagemia",
+          url: "https://triagemia.com.br/termos",
+        },
+      ],
+    },
   ],
   ctaTitle: "Seu projeto pode ser o próximo case — quando estiver pronto.",
   ctaDescription:
@@ -98,7 +119,7 @@ export default function Cases() {
           { name: "Cases", path: "/pt/cases" },
         ])}
       />
-      <JsonLd data={entrelaCaseSchema("pt")} />
+      <JsonLd data={productCasesSchema("pt")} />
       <CasesPage locale="pt" content={content} />
     </>
   )

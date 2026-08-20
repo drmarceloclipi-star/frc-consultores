@@ -1,9 +1,15 @@
 import { BASE_URL } from "./seo"
 
+const organizationId = `${BASE_URL}/#organization`
+const entrelaUrl = "https://ladoalado.app/"
+const entrelaBrandId = `${entrelaUrl}#brand`
+const triagemiaUrl = "https://triagemia.com.br/"
+const triagemiaBrandId = `${triagemiaUrl}#brand`
+
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": `${BASE_URL}/#organization`,
+  "@id": organizationId,
   name: "FRC",
   legalName: "FRC Consultores Associados LTDA",
   alternateName: "FRC Consultores Associados",
@@ -36,6 +42,10 @@ export const organizationSchema = {
     { "@type": "Person", name: "Maria de Fátima Resende Cavalcanti" },
     { "@type": "Person", name: "Marcelo Hugo Resende Tiburtius Cavalcanti" },
   ],
+  brand: [
+    { "@id": entrelaBrandId },
+    { "@id": triagemiaBrandId },
+  ],
 }
 
 export const websiteSchema = {
@@ -44,7 +54,7 @@ export const websiteSchema = {
   "@id": `${BASE_URL}/#website`,
   url: BASE_URL,
   name: "FRC",
-  publisher: { "@id": `${BASE_URL}/#organization` },
+  publisher: { "@id": organizationId },
   inLanguage: ["pt-BR", "en"],
 }
 
@@ -73,29 +83,19 @@ export function contactPageSchema(locale: "pt" | "en") {
       : "Legal Data / Contact — FRC",
     inLanguage: isPt ? "pt-BR" : "en",
     isPartOf: { "@id": `${BASE_URL}/#website` },
-    mainEntity: { "@id": `${BASE_URL}/#organization` },
+    mainEntity: { "@id": organizationId },
   }
 }
 
-export function entrelaCaseSchema(locale: "pt" | "en") {
+export function productCasesSchema(locale: "pt" | "en") {
   const isPt = locale === "pt"
-  const entrelaUrl = "https://ladoalado.app/"
-  const brandId = `${entrelaUrl}#brand`
 
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": `${BASE_URL}/#organization`,
-        name: "FRC",
-        legalName: "FRC Consultores Associados LTDA",
-        url: BASE_URL,
-        brand: { "@id": brandId },
-      },
-      {
         "@type": "Brand",
-        "@id": brandId,
+        "@id": entrelaBrandId,
         name: "Entrela",
         url: entrelaUrl,
       },
@@ -109,8 +109,29 @@ export function entrelaCaseSchema(locale: "pt" | "en") {
         description: isPt
           ? "Produto digital desenvolvido e operado pela FRC Consultores Associados LTDA para apoiar o acompanhamento entre pessoas e profissionais de saúde."
           : "A digital product developed and operated by FRC Consultores Associados LTDA to support follow-up between people and healthcare professionals.",
-        creator: { "@id": `${BASE_URL}/#organization` },
-        publisher: { "@id": `${BASE_URL}/#organization` },
+        brand: { "@id": entrelaBrandId },
+        creator: { "@id": organizationId },
+        publisher: { "@id": organizationId },
+      },
+      {
+        "@type": "Brand",
+        "@id": triagemiaBrandId,
+        name: "Triagemia",
+        url: triagemiaUrl,
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${triagemiaUrl}#softwareapplication`,
+        name: "Triagemia",
+        url: triagemiaUrl,
+        applicationCategory: "HealthApplication",
+        operatingSystem: ["Web", "iOS", "Android"],
+        description: isPt
+          ? "Produto digital gratuito desenvolvido, licenciado e operado pela FRC Consultores Associados LTDA para apoiar a triagem psiquiátrica estruturada, sem constituir diagnóstico."
+          : "A free digital product developed, licensed, and operated by FRC Consultores Associados LTDA to support structured psychiatric triage without providing a diagnosis.",
+        brand: { "@id": triagemiaBrandId },
+        creator: { "@id": organizationId },
+        publisher: { "@id": organizationId },
       },
     ],
   }
@@ -155,7 +176,7 @@ export function appProductCatalogSchema(
         "@type": "Service",
         name: product.name,
         description: product.summary,
-        provider: { "@id": `${BASE_URL}/#organization` },
+        provider: { "@id": organizationId },
         areaServed: "BR",
       },
     })),
