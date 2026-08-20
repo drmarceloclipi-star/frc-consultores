@@ -1,7 +1,7 @@
 /*
  * THESIS: Every project is visitable proof, not a logo or an unsupported promise.
  * OWN-WORLD: White dossier paper, deep slate ink, gold notation and functional labels.
- * STORY: Visitors scan five products, recognize breadth and open the public evidence.
+ * STORY: Visitors scan seven products, recognize breadth and open the public evidence.
  * FIRST VIEWPORT: Dark field, editorial title and a promise bounded by verifiable facts.
  * FORM: Sequential numbered dossiers, structural candidate 5, seed 0910df44.
  */
@@ -15,14 +15,14 @@ export const metadata: Metadata = pageMetadata({
   path: "/cases",
   title: "Case Studies in Apps, AI and Digital Products",
   description:
-    "Explore public FRC projects: Levanta Mão, Jourmingo, Entrela, Medário and Triagemia.",
+    "Explore public FRC projects: Levanta Mão, Jourmingo, Entrela, Medário, Triagemia, BedSight Flow and Precepte.",
 })
 
 const content = {
   eyebrow: "Selected case studies",
   title: "Real software, available to explore.",
   intro:
-    "Five products in distinct contexts — live interaction, private AI, digital health, professional discovery and psychiatric triage. No invented metrics: every case links to public evidence.",
+    "Seven products in distinct contexts — live interaction, private AI, digital health, professional discovery, psychiatric triage, hospital flow and medical residency. No invented metrics: every case links to public evidence.",
   visitLabel: "Visit project",
   proofLabel: "About the evidence",
   proofText:
@@ -102,6 +102,28 @@ const content = {
           url: "https://triagemia.com.br/en/termos",
         },
       ],
+    },
+    {
+      index: "06",
+      name: "BedSight Flow",
+      category: "Hospital flow",
+      title: "Visual management for hospital bed routines.",
+      description:
+        "An operational governance system for hospital flow based on Lean Healthcare, using Kamishibai, Kanban and Huddle to organize bed routines.",
+      capabilities: ["Web", "Bed management", "Lean Healthcare", "Real time"],
+      url: "https://lean-841e5.web.app/",
+      domain: "lean-841e5.web.app",
+    },
+    {
+      index: "07",
+      name: "Precepte",
+      category: "Medical residency",
+      title: "Academic and operational management for residency programs.",
+      description:
+        "A platform for medical residency programs that centralizes attendance, assessments, schedules, communication and institutional oversight.",
+      capabilities: ["Web", "iOS", "Android", "Medical residency"],
+      url: "https://precepta-72265.web.app/",
+      domain: "precepta-72265.web.app",
     },
   ],
   ctaTitle: "Your project can become the next case — when it is ready.",

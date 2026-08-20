@@ -199,6 +199,17 @@ test("product cases link the FRC entity and localized legal documents", async ({
       expect(hasVisibleFocus).toBe(true)
     }
 
+    for (const [name, url] of [
+      ["BedSight Flow", "https://lean-841e5.web.app/"],
+      ["Precepte", "https://precepta-72265.web.app/"],
+    ]) {
+      const caseStudy = page.getByRole("article").filter({ hasText: name })
+      await expect(caseStudy.getByRole("link", { name: new RegExp(locale.visitLabel) })).toHaveAttribute(
+        "href",
+        url
+      )
+    }
+
     const schemas = await page
       .locator('script[type="application/ld+json"]')
       .allTextContents()
@@ -224,6 +235,12 @@ test("product cases link the FRC entity and localized legal documents", async ({
     const triagemiaApplication = nodes.find(
       (node) => node["@id"] === "https://triagemia.com.br/#softwareapplication"
     )
+    const bedSightFlowApplication = nodes.find(
+      (node) => node["@id"] === "https://lean-841e5.web.app/#softwareapplication"
+    )
+    const precepteApplication = nodes.find(
+      (node) => node["@id"] === "https://precepta-72265.web.app/#softwareapplication"
+    )
 
     expect(organizations).toHaveLength(1)
     expect(organization).toMatchObject({
@@ -232,6 +249,8 @@ test("product cases link the FRC entity and localized legal documents", async ({
       brand: [
         { "@id": "https://ladoalado.app/#brand" },
         { "@id": "https://triagemia.com.br/#brand" },
+        { "@id": "https://lean-841e5.web.app/#brand" },
+        { "@id": "https://precepta-72265.web.app/#brand" },
       ],
     })
     expect(entrelaBrand).toMatchObject({
@@ -255,6 +274,20 @@ test("product cases link the FRC entity and localized legal documents", async ({
       url: "https://triagemia.com.br/",
       operatingSystem: ["Web", "iOS", "Android"],
       brand: { "@id": "https://triagemia.com.br/#brand" },
+      creator: { "@id": "https://frcconsultores.com.br/#organization" },
+      publisher: { "@id": "https://frcconsultores.com.br/#organization" },
+    })
+    expect(bedSightFlowApplication).toMatchObject({
+      "@id": "https://lean-841e5.web.app/#softwareapplication",
+      url: "https://lean-841e5.web.app/",
+      operatingSystem: ["Web", "iOS", "Android"],
+      creator: { "@id": "https://frcconsultores.com.br/#organization" },
+      publisher: { "@id": "https://frcconsultores.com.br/#organization" },
+    })
+    expect(precepteApplication).toMatchObject({
+      "@id": "https://precepta-72265.web.app/#softwareapplication",
+      url: "https://precepta-72265.web.app/",
+      operatingSystem: ["Web", "iOS", "Android"],
       creator: { "@id": "https://frcconsultores.com.br/#organization" },
       publisher: { "@id": "https://frcconsultores.com.br/#organization" },
     })

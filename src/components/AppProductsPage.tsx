@@ -165,6 +165,44 @@ export function AppProductsPage({ locale, content }: AppProductsPageProps) {
           </div>
         </section>
 
+        <section aria-labelledby="app-cases-title" className="border-y border-gray-200 bg-white py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-frc-bronze">
+              {content.caseStudiesEyebrow}
+            </p>
+            <h2 id="app-cases-title" className="font-display mt-4 max-w-3xl text-4xl font-semibold leading-tight text-frc-ink md:text-5xl">
+              {content.caseStudiesTitle}
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-frc-muted">
+              {content.caseStudiesIntro}
+            </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {content.caseStudies.map((caseStudy) => (
+                <article key={caseStudy.name} className="flex flex-col border border-gray-200 p-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-frc-bronze">
+                    {caseStudy.category}
+                  </p>
+                  <h3 className="font-display mt-4 text-3xl font-semibold text-frc-ink">
+                    {caseStudy.name}
+                  </h3>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-frc-muted">
+                    {caseStudy.summary}
+                  </p>
+                  <a
+                    href={caseStudy.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-7 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-frc-bronze underline decoration-1 underline-offset-4 transition-colors hover:text-frc-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-frc-bronze focus-visible:ring-offset-2"
+                  >
+                    {caseStudy.domain}
+                    <ExternalLink aria-hidden="true" className="h-4 w-4" />
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="border-y border-gray-200 bg-white py-16 md:py-20">
           <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 md:grid-cols-[0.8fr_2.2fr] lg:px-8">
             <div>

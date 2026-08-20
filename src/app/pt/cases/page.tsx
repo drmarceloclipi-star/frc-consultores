@@ -1,7 +1,7 @@
 /*
  * THESIS: Cada projeto é uma prova visitável, não um logotipo ou uma promessa.
  * OWN-WORLD: Dossiê branco, tinta azul-petróleo, marcações douradas e etiquetas funcionais.
- * STORY: O visitante percorre cinco produtos, reconhece amplitude e visita a evidência pública.
+ * STORY: O visitante percorre sete produtos, reconhece amplitude e visita a evidência pública.
  * FIRST VIEWPORT: Fundo escuro, título editorial e promessa limitada ao que pode ser verificado.
  * FORM: Dossiês numerados em sequência, candidato estrutural 5, seed 0910df44.
  */
@@ -15,14 +15,14 @@ export const metadata: Metadata = pageMetadata({
   path: "/cases",
   title: "Cases de Aplicativos, IA e Produtos Digitais",
   description:
-    "Conheça projetos públicos da FRC: Levanta Mão, Jourmingo, Entrela, Medário e Triagemia.",
+    "Conheça projetos públicos da FRC: Levanta Mão, Jourmingo, Entrela, Medário, Triagemia, BedSight Flow e Precepte.",
 })
 
 const content = {
   eyebrow: "Cases selecionados",
   title: "Software real, disponível para conhecer.",
   intro:
-    "Cinco produtos com contextos distintos — interação ao vivo, IA privada, saúde digital, descoberta de profissionais e triagem psiquiátrica. Sem métricas inventadas: cada case leva à sua evidência pública.",
+    "Sete produtos com contextos distintos — interação ao vivo, IA privada, saúde digital, descoberta de profissionais, triagem psiquiátrica, fluxo hospitalar e residência médica. Sem métricas inventadas: cada case leva à sua evidência pública.",
   visitLabel: "Visitar projeto",
   proofLabel: "Sobre as evidências",
   proofText:
@@ -102,6 +102,28 @@ const content = {
           url: "https://triagemia.com.br/termos",
         },
       ],
+    },
+    {
+      index: "06",
+      name: "BedSight Flow",
+      category: "Fluxo hospitalar",
+      title: "Gestão à vista para a rotina de leitos hospitalares.",
+      description:
+        "Sistema de governança operacional para fluxo hospitalar baseado em Lean Healthcare, com Kamishibai, Kanban e Huddle para organizar a rotina de leitos.",
+      capabilities: ["Web", "Gestão de leitos", "Lean Healthcare", "Tempo real"],
+      url: "https://lean-841e5.web.app/",
+      domain: "lean-841e5.web.app",
+    },
+    {
+      index: "07",
+      name: "Precepte",
+      category: "Residência médica",
+      title: "Gestão acadêmica e operacional para programas de residência.",
+      description:
+        "Plataforma para programas de residência médica que centraliza presença, avaliações, escalas, comunicação e acompanhamento institucional.",
+      capabilities: ["Web", "iOS", "Android", "Residência médica"],
+      url: "https://precepta-72265.web.app/",
+      domain: "precepta-72265.web.app",
     },
   ],
   ctaTitle: "Seu projeto pode ser o próximo case — quando estiver pronto.",

@@ -5,6 +5,10 @@ const entrelaUrl = "https://ladoalado.app/"
 const entrelaBrandId = `${entrelaUrl}#brand`
 const triagemiaUrl = "https://triagemia.com.br/"
 const triagemiaBrandId = `${triagemiaUrl}#brand`
+const bedSightFlowUrl = "https://lean-841e5.web.app/"
+const bedSightFlowBrandId = `${bedSightFlowUrl}#brand`
+const precepteUrl = "https://precepta-72265.web.app/"
+const precepteBrandId = `${precepteUrl}#brand`
 
 export const organizationSchema = {
   "@context": "https://schema.org",
@@ -45,6 +49,8 @@ export const organizationSchema = {
   brand: [
     { "@id": entrelaBrandId },
     { "@id": triagemiaBrandId },
+    { "@id": bedSightFlowBrandId },
+    { "@id": precepteBrandId },
   ],
 }
 
@@ -130,6 +136,46 @@ export function productCasesSchema(locale: "pt" | "en") {
           ? "Produto digital gratuito desenvolvido, licenciado e operado pela FRC Consultores Associados LTDA para apoiar a triagem psiquiátrica estruturada, sem constituir diagnóstico."
           : "A free digital product developed, licensed, and operated by FRC Consultores Associados LTDA to support structured psychiatric triage without providing a diagnosis.",
         brand: { "@id": triagemiaBrandId },
+        creator: { "@id": organizationId },
+        publisher: { "@id": organizationId },
+      },
+      {
+        "@type": "Brand",
+        "@id": bedSightFlowBrandId,
+        name: "BedSight Flow",
+        url: bedSightFlowUrl,
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${bedSightFlowUrl}#softwareapplication`,
+        name: "BedSight Flow",
+        url: bedSightFlowUrl,
+        applicationCategory: "HealthApplication",
+        operatingSystem: ["Web", "iOS", "Android"],
+        description: isPt
+          ? "Sistema de governança operacional para fluxo hospitalar baseado em Lean Healthcare."
+          : "An operational governance system for hospital flow based on Lean Healthcare.",
+        brand: { "@id": bedSightFlowBrandId },
+        creator: { "@id": organizationId },
+        publisher: { "@id": organizationId },
+      },
+      {
+        "@type": "Brand",
+        "@id": precepteBrandId,
+        name: "Precepte",
+        url: precepteUrl,
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${precepteUrl}#softwareapplication`,
+        name: "Precepte",
+        url: precepteUrl,
+        applicationCategory: "HealthApplication",
+        operatingSystem: ["Web", "iOS", "Android"],
+        description: isPt
+          ? "Plataforma para gestão acadêmica e operacional de programas de residência médica."
+          : "A platform for academic and operational management of medical residency programs.",
+        brand: { "@id": precepteBrandId },
         creator: { "@id": organizationId },
         publisher: { "@id": organizationId },
       },

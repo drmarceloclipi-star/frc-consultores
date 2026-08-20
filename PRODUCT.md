@@ -46,6 +46,9 @@ Cases autorizados para apresentação pública:
 - Jourmingo — IA pessoal que opera no aparelho, inclusive sem internet: <https://jourmingo.web.app/>.
 - Entrela — experiência digital de acompanhamento de bem-estar e comunicação com profissionais de saúde: <https://ladoalado.app/login>.
 - Medário — catálogo para encontrar médicos em Joinville por especialidade e outros critérios verificáveis: <https://medario.com.br/>.
+- Triagemia — apoio estruturado à triagem psiquiátrica e análise clínica assistida por IA para profissionais de saúde mental: <https://triagemia.com.br/>.
+- BedSight Flow — sistema de governança operacional de fluxo hospitalar baseado em Lean Healthcare: <https://lean-841e5.web.app/>.
+- Precepte — plataforma de gestão acadêmica e operacional para programas de residência médica: <https://precepta-72265.web.app/>.
 
 Os sites públicos dos projetos fornecem descrições e demonstrações verificáveis. Não há métricas, depoimentos ou resultados comerciais autorizados; trabalhos futuros não devem fabricá-los.
 
