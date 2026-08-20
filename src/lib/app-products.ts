@@ -15,6 +15,14 @@ export interface AppProduct {
   featured?: boolean
 }
 
+interface CaseStudyPreview {
+  name: string
+  category: string
+  summary: string
+  url: string
+  domain: string
+}
+
 interface AppProductsContent {
   eyebrow: string
   title: string
@@ -31,6 +39,10 @@ interface AppProductsContent {
   requestLabel: string
   featuredLabel: string
   products: readonly AppProduct[]
+  caseStudiesEyebrow: string
+  caseStudiesTitle: string
+  caseStudiesIntro: string
+  caseStudies: readonly CaseStudyPreview[]
   useCasesEyebrow: string
   useCasesTitle: string
   useCasesIntro: string
@@ -181,6 +193,36 @@ const ptContent: AppProductsContent = {
       ],
       exclusions: ["Hospedagem, APIs e serviços de terceiros são cobrados separadamente."],
       recurring: true,
+    },
+  ],
+  caseStudiesEyebrow: "Cases",
+  caseStudiesTitle: "Produtos em operação, disponíveis para conhecer.",
+  caseStudiesIntro:
+    "Três exemplos públicos de produtos desenvolvidos pela FRC em contextos de saúde e operação institucional.",
+  caseStudies: [
+    {
+      name: "Triagemia",
+      category: "Triagem psiquiátrica",
+      summary:
+        "Coleta estruturada e síntese clínica assistida por IA para profissionais de saúde mental, sem constituir diagnóstico.",
+      url: "https://triagemia.com.br/",
+      domain: "triagemia.com.br",
+    },
+    {
+      name: "BedSight Flow",
+      category: "Fluxo hospitalar",
+      summary:
+        "Gestão operacional de leitos baseada em Lean Healthcare, com gestão à vista para a rotina hospitalar.",
+      url: "https://lean-841e5.web.app/",
+      domain: "lean-841e5.web.app",
+    },
+    {
+      name: "Precepte",
+      category: "Residência médica",
+      summary:
+        "Plataforma para gestão de presença, avaliações, escalas e acompanhamento de programas de residência médica.",
+      url: "https://precepta-72265.web.app/",
+      domain: "precepta-72265.web.app",
     },
   ],
   useCasesEyebrow: "Aplicações",
@@ -396,6 +438,36 @@ const enContent: AppProductsContent = {
       ],
       exclusions: ["Hosting, APIs and third-party services are billed separately."],
       recurring: true,
+    },
+  ],
+  caseStudiesEyebrow: "Case studies",
+  caseStudiesTitle: "Live products, available to explore.",
+  caseStudiesIntro:
+    "Three public examples of products built by FRC for healthcare and institutional operations.",
+  caseStudies: [
+    {
+      name: "Triagemia",
+      category: "Psychiatric triage",
+      summary:
+        "Structured collection and AI-assisted clinical summaries for mental health professionals, without providing a diagnosis.",
+      url: "https://triagemia.com.br/en/",
+      domain: "triagemia.com.br",
+    },
+    {
+      name: "BedSight Flow",
+      category: "Hospital flow",
+      summary:
+        "Lean Healthcare-based operational bed management with visual management for hospital routines.",
+      url: "https://lean-841e5.web.app/",
+      domain: "lean-841e5.web.app",
+    },
+    {
+      name: "Precepte",
+      category: "Medical residency",
+      summary:
+        "A platform for attendance, assessments, schedules and program oversight in medical residency operations.",
+      url: "https://precepta-72265.web.app/",
+      domain: "precepta-72265.web.app",
     },
   ],
   useCasesEyebrow: "Applications",
