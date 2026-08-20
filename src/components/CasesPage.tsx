@@ -12,6 +12,10 @@ interface CaseStudy {
   capabilities: readonly string[]
   url: string
   domain: string
+  links?: readonly {
+    label: string
+    url: string
+  }[]
 }
 
 interface CasesPageProps {
@@ -94,6 +98,22 @@ export function CasesPage({ locale, content }: CasesPageProps) {
                   <p className="text-base leading-relaxed text-frc-muted">
                     {caseStudy.description}
                   </p>
+                  {caseStudy.links ? (
+                    <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1">
+                      {caseStudy.links.map((link) => (
+                        <a
+                          key={link.url}
+                          href={link.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex min-h-11 items-center text-sm font-semibold text-frc-bronze underline decoration-1 underline-offset-4 transition-colors hover:text-frc-ink"
+                        >
+                          {link.label}
+                          <ArrowUpRight aria-hidden="true" className="ml-1 h-4 w-4" />
+                        </a>
+                      ))}
+                    </div>
+                  ) : null}
                   <ul className="mt-7 flex flex-wrap gap-2" aria-label={caseStudy.name}>
                     {caseStudy.capabilities.map((capability) => (
                       <li

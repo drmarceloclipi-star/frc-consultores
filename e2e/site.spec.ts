@@ -114,6 +114,140 @@ test("app catalog exposes prices, external costs and structured offers", async (
   expect(catalog?.itemListElement).toHaveLength(6)
 })
 
+test("Entrela case links the FRC entity, product and localized legal documents", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 320, height: 700 })
+
+  const locales = [
+    {
+      path: "/pt/cases",
+      ownership:
+        "O Entrela é um produto digital desenvolvido e operado pela FRC Consultores Associados LTDA.",
+      visitLabel: "Visitar projeto",
+      privacyLabel: "Privacidade do Entrela",
+      privacyUrl: "https://ladoalado.app/privacidade",
+      termsLabel: "Termos de uso do Entrela",
+      termsUrl: "https://ladoalado.app/termos",
+    },
+    {
+      path: "/en/cases",
+      ownership:
+        "Entrela is a digital product developed and operated by FRC Consultores Associados LTDA.",
+      visitLabel: "Visit project",
+      privacyLabel: "Entrela Privacy Policy",
+      privacyUrl: "https://ladoalado.app/en/privacy",
+      termsLabel: "Entrela Terms of Use",
+      termsUrl: "https://ladoalado.app/en/terms",
+    },
+  ] as const
+
+  for (const locale of locales) {
+    await page.goto(locale.path)
+
+    const entrela = page.getByRole("article").filter({ hasText: "Entrela" })
+    await expect(entrela).toContainText(locale.ownership)
+    await expect(
+      entrela.getByRole("link", { name: new RegExp(locale.visitLabel) })
+    ).toHaveAttribute("href", "https://ladoalado.app/")
+    await expect(
+      entrela.getByRole("link", { name: locale.privacyLabel })
+    ).toHaveAttribute("href", locale.privacyUrl)
+    await expect(
+      entrela.getByRole("link", { name: locale.termsLabel })
+    ).toHaveAttribute("href", locale.termsUrl)
+
+    const schemas = await page
+      .locator('script[type="application/ld+json"]')
+      .allTextContents()
+    const nodes = schemas.flatMap((schema) => {
+      const document = JSON.parse(schema) as {
+        "@graph"?: Record<string, unknown>[]
+      }
+      return document["@graph"] ?? []
+    })
+    const organization = nodes.find((node) => node["@type"] === "Organization")
+    const brand = nodes.find((node) => node["@type"] === "Brand")
+    const application = nodes.find(
+      (node) => node["@type"] === "SoftwareApplication"
+    )
+
+    expect(organization).toMatchObject({
+      "@id": "https://frcconsultores.com.br/#organization",
+      legalName: "FRC Consultores Associados LTDA",
+      brand: { "@id": "https://ladoalado.app/#brand" },
+    })
+    expect(brand).toMatchObject({
+      "@id": "https://ladoalado.app/#brand",
+      name: "Entrela",
+    })
+    expect(application).toMatchObject({
+      "@id": "https://ladoalado.app/#softwareapplication",
+      url: "https://ladoalado.app/",
+      operatingSystem: ["Web", "iOS", "Android"],
+      creator: { "@id": "https://frcconsultores.com.br/#organization" },
+      publisher: { "@id": "https://frcconsultores.com.br/#organization" },
+    })
+
+    const width = await page.evaluate(() => ({
+      document: document.documentElement.scrollWidth,
+      viewport: document.documentElement.clientWidth,
+    }))
+    expect(width.document).toBe(width.viewport)
+  }
+})
+
+test("FRC privacy policy separates local apps from Entrela backend processing", async ({
+  page,
+}) => {
+  const locales = [
+    {
+      path: "/pt/privacy",
+      heading: "4. Entrela — política própria",
+      scope: "O Entrela possui escopo e política próprios",
+      controllerScope:
+        "Para os tratamentos realizados no site frcconsultores.com.br e nos aplicativos móveis locais da marca FRC Software",
+      disclosureScope:
+        "Os compartilhamentos do Entrela estão descritos em sua política própria.",
+      privacyLabel: "Política de Privacidade do Entrela",
+      privacyUrl: "https://ladoalado.app/privacidade",
+      termsLabel: "Termos de Uso do Entrela",
+      termsUrl: "https://ladoalado.app/termos",
+    },
+    {
+      path: "/en/privacy",
+      heading: "4. Entrela — separate policy",
+      scope: "Entrela has a distinct scope and its own policy",
+      controllerScope:
+        "For processing carried out on frcconsultores.com.br and in the local mobile apps under the FRC Software brand",
+      disclosureScope:
+        "Entrela disclosures are described in its own policy.",
+      privacyLabel: "Entrela Privacy Policy",
+      privacyUrl: "https://ladoalado.app/en/privacy",
+      termsLabel: "Entrela Terms of Use",
+      termsUrl: "https://ladoalado.app/en/terms",
+    },
+  ] as const
+
+  for (const locale of locales) {
+    await page.goto(locale.path)
+
+    const main = page.getByRole("main")
+    await expect(main.getByRole("heading", { name: locale.heading })).toBeVisible()
+    await expect(main).toContainText(locale.scope)
+    await expect(main).toContainText(locale.controllerScope)
+    await expect(main).toContainText(locale.disclosureScope)
+    await expect(main.getByRole("link", { name: locale.privacyLabel })).toHaveAttribute(
+      "href",
+      locale.privacyUrl
+    )
+    await expect(main.getByRole("link", { name: locale.termsLabel })).toHaveAttribute(
+      "href",
+      locale.termsUrl
+    )
+  }
+})
+
 test("product CTA preselects the requested package", async ({ page }) => {
   await page.goto("/pt/apps")
   const card = page
